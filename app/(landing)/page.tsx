@@ -10,7 +10,7 @@ export default async function HomePage() {
           <h1>{project.name}</h1>
         </div>
       ))} */}
-      HomePage
+      <div><p>HomePage</p></div>
     </div>
   );
 }

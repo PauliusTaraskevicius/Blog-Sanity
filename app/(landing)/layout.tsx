@@ -1,3 +1,4 @@
+import Footer from "./_components/footer";
 import Navbar from "./_components/navbar";
 
 export default function LandingLayout({
@@ -9,6 +10,7 @@ export default function LandingLayout({
     <div className="h-full overflow-hidden">
       <Navbar />
       <main className="h-full ">{children}</main>
+      <Footer />
     </div>
   );
 }
