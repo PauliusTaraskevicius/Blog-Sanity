@@ -1,5 +1,6 @@
 import { getProjects } from "@/sanity/sanity-utils";
 
+
 export default async function HomePage() {
   const projects = await getProjects();
 
@@ -10,7 +11,11 @@ export default async function HomePage() {
           <h1>{project.name}</h1>
         </div>
       ))} */}
-      <div><p>HomePage</p></div>
+      <div>
+        <p>HomePage</p>
+
+      </div>
+
     </div>
   );
 }
