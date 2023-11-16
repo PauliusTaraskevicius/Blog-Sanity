@@ -1,0 +1,22 @@
+{
+  "footer": {
+    "home": "Pradžia",
+    "about": "Apie mus",
+    "blog": "Blogas",
+    "projects": "Projektai",
+    "contact": "Kontaktai",
+    "cookies": "Slapukai",
+    "privacy": "Privatumo politika",
+    "warning": "Visos teisės saugomos"
+  },
+  "page": {
+    "home": {
+      "title": "Blogas",
+      "description": "Blogas"
+    },
+    "about": {
+      "title": "Apie mus",
+      "description": "Apie mus"
+    }
+  }
+}

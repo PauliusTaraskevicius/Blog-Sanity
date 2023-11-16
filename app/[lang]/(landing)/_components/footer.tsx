@@ -1,6 +1,8 @@
-"use client";
-
 import Link from "next/link";
+
+import { Locale } from "@/i18n.config";
+import { getDictionary } from "@/lib/dictionary";
+import LocaleSwitcher from "@/components/locale-switcher";
 
 import {
   DropdownMenu,
@@ -9,10 +11,11 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-
 import { ChevronDown } from "lucide-react";
 
-const Footer = () => {
+async function Footer({ lang }: { lang: Locale }) {
+  const { footer } = await getDictionary(lang);
+
   return (
     <footer className="hidden md:block w-full h-[33px] fixed bottom-0 border-t px-4 py-2">
       <div className="flex justify-start items-center gap-x-4">
@@ -21,7 +24,7 @@ const Footer = () => {
             <DropdownMenuTrigger className="flex group items-center justify-center">
               {" "}
               <p className="text-xs font-semibold text-muted-foreground">
-                Blog
+                {footer.blog}
               </p>
               <ChevronDown
                 className="relative top-[1px] ml-1 h-3 w-3 transition duration-200 group-data-[state=open]:rotate-180"
@@ -32,28 +35,28 @@ const Footer = () => {
               <DropdownMenuItem>
                 <Link href="/blog" className="w-full">
                   <p className="hover:bg-blue-600 hover:text-white transition cursor-pointer leading-loose">
-                    Blog
+                    {footer.blog}
                   </p>
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuItem>
                 <Link href="/projects" className="w-full">
                   <p className="hover:bg-blue-600 hover:text-white transition cursor-pointer leading-loose">
-                    Projects
+                    {footer.projects}
                   </p>
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuItem>
-                <Link href="/about" className="w-full">
+                <Link href={`/${lang}/about`} className="w-full">
                   <p className="hover:bg-blue-600 hover:text-white transition cursor-pointer leading-loose">
-                    About
+                    {footer.about}
                   </p>
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuItem>
                 <Link href="/contact" className="w-full">
                   <p className="hover:bg-blue-600 hover:text-white transition cursor-pointer leading-loose">
-                    Contact
+                    {footer.contact}
                   </p>
                 </Link>
               </DropdownMenuItem>
@@ -61,69 +64,31 @@ const Footer = () => {
           </DropdownMenu>
         </div>
         <div className="flex border-r border-muted-foreground pr-4">
-          <DropdownMenu>
-            <DropdownMenuTrigger className="flex group items-center justify-center">
-              {" "}
-              <p className="text-xs font-semibold text-muted-foreground">
-                English
-              </p>
-              <ChevronDown
-                className="relative top-[1px] ml-1 h-3 w-3 transition duration-200 group-data-[state=open]:rotate-180"
-                aria-hidden="true"
-              />
-            </DropdownMenuTrigger>
-            <DropdownMenuContent className="text-muted-foreground text-center px-0 py-0">
-              <DropdownMenuItem>
-                <p className="w-full hover:bg-blue-600 hover:text-white transition cursor-pointer leading-loose">
-                  English
-                </p>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <p className="w-full hover:bg-blue-600 hover:text-white transition cursor-pointer leading-loose">
-                  Lithuanian
-                </p>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <p className="w-full hover:bg-blue-600 hover:text-white transition cursor-pointer leading-loose">
-                  Polski
-                </p>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <p className="w-full hover:bg-blue-600 hover:text-white transition cursor-pointer leading-loose">
-                  Russian
-                </p>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <p className="w-full hover:bg-blue-600 hover:text-white transition cursor-pointer leading-loose">
-                  Suomi
-                </p>
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
+          <LocaleSwitcher lang={lang} />
         </div>
 
         <div className="">
           <ul className="flex justify-center items-center gap-x-2 text-xs font-semibold text-muted-foreground">
             <li className="px-1 cursor-pointer hover:text-blue-600 transition">
-              Privacy
+              {footer.privacy}
             </li>
             <li className="px-1 cursor-pointer hover:text-blue-600 transition">
-              Cookie preferences
+              {footer.cookies}
             </li>
             <li className="px-1 cursor-pointer hover:text-blue-600 transition">
-              Contact
+              {footer.contact}
             </li>
             <li className="px-1 cursor-pointer hover:text-blue-600 transition">
-              About us
+              {footer.about}
             </li>
             <li className="px-1 cursor-pointer hover:text-blue-600 transition">
-              Do not sell or share my personal information
+              {footer.warning}
             </li>
           </ul>
         </div>
       </div>
     </footer>
   );
-};
+}
 
 export default Footer;
