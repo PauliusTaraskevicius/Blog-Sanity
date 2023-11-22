@@ -17,7 +17,7 @@ async function Footer({ lang }: { lang: Locale }) {
   const { footer } = await getDictionary(lang);
 
   return (
-    <footer className="hidden md:block w-full h-[33px] fixed bottom-0 border-t px-4 py-2">
+    <footer className="md:block w-full h-[33px] fixed bottom-0 border-t px-4 py-2">
       <div className="flex justify-start items-center gap-x-4">
         <div className="flex items-center justify-center border-r border-muted-foreground pr-4 transition">
           <DropdownMenu>
@@ -33,14 +33,14 @@ async function Footer({ lang }: { lang: Locale }) {
             </DropdownMenuTrigger>
             <DropdownMenuContent className="text-muted-foreground text-center px-0 py-0">
               <DropdownMenuItem>
-                <Link href="/blog" className="w-full">
+                <Link href={`/${lang}/blog`} className="w-full">
                   <p className="hover:bg-blue-600 hover:text-white transition cursor-pointer leading-loose">
                     {footer.blog}
                   </p>
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuItem>
-                <Link href="/projects" className="w-full">
+                <Link href={`/${lang}/projects`} className="w-full">
                   <p className="hover:bg-blue-600 hover:text-white transition cursor-pointer leading-loose">
                     {footer.projects}
                   </p>
@@ -54,7 +54,7 @@ async function Footer({ lang }: { lang: Locale }) {
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuItem>
-                <Link href="/contact" className="w-full">
+                <Link href={`/${lang}/contact`}className="w-full">
                   <p className="hover:bg-blue-600 hover:text-white transition cursor-pointer leading-loose">
                     {footer.contact}
                   </p>
@@ -67,7 +67,7 @@ async function Footer({ lang }: { lang: Locale }) {
           <LocaleSwitcher lang={lang} />
         </div>
 
-        <div className="">
+        <div className="hidden md:block">
           <ul className="flex justify-center items-center gap-x-2 text-xs font-semibold text-muted-foreground">
             <li className="px-1 cursor-pointer hover:text-blue-600 transition">
               {footer.privacy}
