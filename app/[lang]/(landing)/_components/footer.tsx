@@ -17,7 +17,7 @@ async function Footer({ lang }: { lang: Locale }) {
   const { footer } = await getDictionary(lang);
 
   return (
-    <footer className="md:block w-full h-[33px] fixed bottom-0 border-t px-4 py-2">
+    <footer className="md:block w-full h-[33px] fixed bottom-0 border-t px-4 py-2 bg-white">
       <div className="flex justify-start items-center gap-x-4">
         <div className="flex items-center justify-center border-r border-muted-foreground pr-4 transition">
           <DropdownMenu>

@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Noto_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import ToastProvider from "@/components/providers/toaster-provider";
 
-const inter = Inter({ subsets: ["latin"] });
+const noto_sans = Noto_Sans({
+  weight: '400',
+  subsets: ['latin'],
+})
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -20,7 +23,7 @@ export default function RootLayout({
     <html lang="lt" suppressHydrationWarning>
       <ToastProvider />
 
-      <body className={inter.className}>
+      <body className={noto_sans.className}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

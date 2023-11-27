@@ -18,9 +18,13 @@ import {
 import toast from "react-hot-toast";
 import { Locale } from "@/i18n.config";
 import MobileNavbar from "./mobile-navbar";
+import { useScrollTop } from "@/hooks/use-scroll-top";
+import { cn } from "@/lib/utils";
 
 const Navbar = ({ lang }: { lang: Locale }) => {
   const [subscribe, setSubscribe] = useState(false);
+
+  const scrolled = useScrollTop();
 
   const subscribeEmail = () => {
     setSubscribe(true);
@@ -35,7 +39,12 @@ const Navbar = ({ lang }: { lang: Locale }) => {
   return (
     <>
       <MobileNavbar lang={lang} />
-      <nav className="hidden md:flex justify-between items-center z-[99999] border-b px-4">
+      <nav
+        className={cn(
+          "hidden md:flex md:w-full fixed top-0 justify-between items-center z-50 border-b px-4 bg-transparent",
+          scrolled && "border-b- shadow-sm bg-white"
+        )}
+      >
         <div className="h-[55px] left-0 flex items-center">
           <div className="h-full flex items-center text-center justify-center gap-x-4">
             <Link href={`/${lang}/`}>

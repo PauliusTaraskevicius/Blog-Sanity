@@ -16,3 +16,18 @@ export async function getProjects(): Promise<Project[]> {
           }`
   );
 }
+
+export async function getBlogs(): Promise<Blog[]> {
+  return createClient(config).fetch(
+    groq`*[_type == "blog"]{
+            _id,
+            _createdAt,
+            name,
+            description,
+            "slug": slug.current,
+            "image": image.asset->url,
+            url,
+            content,
+          }`
+  );
+}

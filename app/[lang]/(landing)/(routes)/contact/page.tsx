@@ -2,7 +2,7 @@ import React from 'react'
 
 const ContactPage = () => {
   return (
-    <div><p>ContactPage</p></div>
+    <div className='flex justify-center items-center h-full'><p>ContactPage</p></div>
   )
 }
 
