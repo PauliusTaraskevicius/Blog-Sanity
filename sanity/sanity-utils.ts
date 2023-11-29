@@ -31,3 +31,20 @@ export async function getBlogs(): Promise<Blog[]> {
           }`
   );
 }
+
+
+export async function getBlog(slug: string): Promise<Project> {
+  return createClient(config).fetch(
+    groq`*[_type == "blog" && slug.current == $slug][0]{
+      _id,
+      _createdAt,
+      name,
+      description,
+      "slug": slug.current,
+      "image": image.asset->url,
+      url,
+      content,
+    }`,
+    { slug }
+  )
+}
