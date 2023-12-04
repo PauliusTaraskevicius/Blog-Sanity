@@ -41,8 +41,8 @@ const Navbar = ({ lang }: { lang: Locale }) => {
       <MobileNavbar lang={lang} />
       <nav
         className={cn(
-          "hidden md:flex md:w-full fixed top-0 justify-between items-center z-50 border-b px-4 bg-transparent",
-          scrolled && "border-b- shadow-sm bg-white"
+          "hidden md:flex md:w-full fixed top-0 justify-between items-center z-50 border-b dark:border-white px-4 bg-transparent ",
+          scrolled && "border-b border-white shadow-sm bg-white text-black"
         )}
       >
         <div className="h-[55px] left-0 flex items-center">

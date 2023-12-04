@@ -6,6 +6,7 @@ export type Project = {
   name: string;
   slug: string;
   image: string;
+  description: string;
   url: string;
   content: PortableTextBlock[];
 };

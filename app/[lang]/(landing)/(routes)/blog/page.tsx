@@ -1,14 +1,13 @@
 import { getBlogs } from "@/sanity/sanity-utils";
 import BlogList from "./_components/blog-list";
-import BlogBanner from "./_components/blogBanner";
-
+import HomeBanner from "../../_components/home-banner";
 
 const Blogs = async () => {
   const blogs = await getBlogs();
 
   return (
     <>
-      <BlogBanner header=" Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"/>
+      <HomeBanner header="Lorem Ipsum has been the industry's standard dummy text ever since the 1500s" />
       <BlogList blogs={blogs} />
     </>
   );

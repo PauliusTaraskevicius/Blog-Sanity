@@ -29,10 +29,9 @@ const BlogList = ({ blogs }: BlogListProps) => {
                   alt={blog.name}
                 />
               </div>
-              <div className="pt-[20px] pb-[20px] bg-white">
+              <div className="pt-[20px] pb-[20px] bg-white dark:bg-transparent">
                 <span className="text-sm text-primary">
                   <Date dateString={blog._createdAt} />
-                  Date
                 </span>
                 <h2 className="text-2xl font-normal leading-normal pb-3 overflow-hidden cursor-pointer group-hover:underline pt-[18px]">
                   {blog.name}
