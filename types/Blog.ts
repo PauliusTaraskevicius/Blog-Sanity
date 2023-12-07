@@ -2,7 +2,7 @@ import { PortableTextBlock } from "sanity";
 
 export type Blog = {
   _id: string;
-  createdAt: Date;
+  _createdAt: Date;
   name: string;
   slug: string;
   description: string;

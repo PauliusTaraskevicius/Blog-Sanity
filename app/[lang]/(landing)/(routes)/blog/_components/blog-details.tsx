@@ -5,6 +5,8 @@ import { PortableText } from "@portabletext/react";
 import BlogBanner from "./blogBanner";
 import { Blog } from "@/types/Blog";
 import Date from "@/components/date";
+import { myPortableTextComponents } from "./portable-text";
+
 
 interface BlogDetailsProps {
   blog: Blog;
@@ -28,7 +30,7 @@ const BlogDetails = ({ blog }: BlogDetailsProps) => {
         </header>
 
         <div className="text-lg text-gray-700 mt-5">
-          <PortableText value={blog.content} />
+          <PortableText value={blog.content} components={myPortableTextComponents}/>
         </div>
 
         <div className="flex justify-center items-center">
@@ -40,11 +42,6 @@ const BlogDetails = ({ blog }: BlogDetailsProps) => {
             height={600}
             className="py-10 object-cover"
           />
-        </div>
-
-        <div className="w-full h-full flex justify-center bg-pink-500">
-          <h1 className="text-black">Naujausi įrašai</h1>
-          <div className="text-black">Naujausi įrašai</div>
         </div>
       </div>
     </div>

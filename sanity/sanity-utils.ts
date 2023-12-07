@@ -19,7 +19,7 @@ export async function getProjects(): Promise<Project[]> {
 
 export async function getBlogs(): Promise<Blog[]> {
   return createClient(config).fetch(
-    groq`*[_type == "blog"]{
+    groq`*[_type == "blog" ]| order(_createdAt desc){
             _id,
             _createdAt,
             name,
@@ -31,7 +31,6 @@ export async function getBlogs(): Promise<Blog[]> {
           }`
   );
 }
-
 
 export async function getBlog(slug: string): Promise<Project> {
   return createClient(config).fetch(
@@ -46,5 +45,5 @@ export async function getBlog(slug: string): Promise<Project> {
       content,
     }`,
     { slug }
-  )
+  );
 }

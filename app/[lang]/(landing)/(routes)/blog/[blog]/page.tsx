@@ -1,6 +1,7 @@
 import { getBlog } from "@/sanity/sanity-utils";
 
 import BlogDetails from "../_components/blog-details";
+import RecentBlogs from "../_components/recent-blogs";
 
 interface BlogSlugProps {
   params: { blog: string };
@@ -12,7 +13,12 @@ const Blog = async ({ params }: BlogSlugProps) => {
 
   return (
     <div>
-      <BlogDetails blog={blog} />
+      <div>
+        <div className="flex justify-center items-center">
+          <BlogDetails blog={blog} />
+        </div>
+        <RecentBlogs />
+      </div>
     </div>
   );
 };
