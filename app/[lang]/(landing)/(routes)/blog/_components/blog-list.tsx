@@ -11,9 +11,9 @@ interface BlogListProps {
 
 const BlogList = ({ blogs }: BlogListProps) => {
   return (
-    <div className="relative h-full w-full opacity-[1px] pt-[58px]">
+    <div className="relative h-full w-full opacity-[1px] lg:pt-[58px]">
       <div className="grid justify-center md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-7 my-10">
-        {blogs.map((blog) => ( 
+        {blogs.map((blog) => (
           <div
             key={blog._id}
             className="rounded-lg max-w-xs md:max-w-none group"
