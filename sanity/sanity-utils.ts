@@ -2,6 +2,7 @@ import { createClient, groq } from "next-sanity";
 import { Project } from "@/types/Project";
 import { Blog } from "@/types/Blog";
 import config from "./config/client-config";
+import { Tip } from "@/types/Tip";
 
 export async function getProjects(): Promise<Project[]> {
   return createClient(config).fetch(
@@ -32,9 +33,40 @@ export async function getBlogs(): Promise<Blog[]> {
   );
 }
 
-export async function getBlog(slug: string): Promise<Project> {
+export async function getBlog(slug: string): Promise<Blog> {
   return createClient(config).fetch(
     groq`*[_type == "blog" && slug.current == $slug][0]{
+      _id,
+      _createdAt,
+      name,
+      description,
+      "slug": slug.current,
+      "image": image.asset->url,
+      url,
+      content,
+    }`,
+    { slug }
+  );
+}
+
+export async function getTips(): Promise<Tip[]> {
+  return createClient(config).fetch(
+    groq`*[_type == "tip" ]| order(_createdAt desc){
+            _id,
+            _createdAt,
+            name,
+            description,
+            "slug": slug.current,
+            "image": image.asset->url,
+            url,
+            content,
+          }`
+  );
+}
+
+export async function getTip(slug: string): Promise<Tip> {
+  return createClient(config).fetch(
+    groq`*[_type == "tip" && slug.current == $slug][0]{
       _id,
       _createdAt,
       name,
