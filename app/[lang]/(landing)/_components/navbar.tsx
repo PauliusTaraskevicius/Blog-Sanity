@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 
-import SearchInput from "@/components/search-input";
+import SearchInput from "./search-input";
 import NavbarRoutes from "./navbar-routes";
 import { ModeToggle } from "@/components/mode-toggle";
 

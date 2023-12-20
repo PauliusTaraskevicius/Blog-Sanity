@@ -9,10 +9,28 @@ const NavbarRoutes = ({ lang }: { lang: Locale }) => {
   const pathname = usePathname();
 
   const routes = [
-    { href: `/${lang}/blog`, label: lang === "lt" ? "Blogas" : lang === "ru" ? "Блог" : "Blog", active: pathname === `/${lang}/blog` },
-    { href: `/${lang}/projects`, label: lang === "lt" ? "Projektai" : lang === "ru" ? "Проекты" : "Projects", active: pathname === `/${lang}/projects` },
-    { href: `/${lang}/about`, label: lang === "lt" ? "Apie mus" : lang === "ru" ? "О нас" : "About us", active: pathname === `/${lang}/about` },
-    { href: `/${lang}/contact`, label: lang === "lt" ? "Kontaktai" : lang === "ru" ? "Kонтакт" : "Contacts", active: pathname === `/${lang}/contact` },
+    {
+      href: `/${lang}/blog`,
+      label: lang === "lt" ? "Blogas" : lang === "ru" ? "Блог" : "Blog",
+      active: pathname === `/${lang}/blog`,
+    },
+    {
+      href: `/${lang}/projects`,
+      label:
+        lang === "lt" ? "Projektai" : lang === "ru" ? "Проекты" : "Projects",
+      active: pathname === `/${lang}/projects`,
+    },
+    {
+      href: `/${lang}/about`,
+      label: lang === "lt" ? "Apie mus" : lang === "ru" ? "О нас" : "About us",
+      active: pathname === `/${lang}/about`,
+    },
+    {
+      href: `/${lang}/contact`,
+      label:
+        lang === "lt" ? "Kontaktai" : lang === "ru" ? "Kонтакт" : "Contacts",
+      active: pathname === `/${lang}/contact`,
+    },
   ];
 
   return (

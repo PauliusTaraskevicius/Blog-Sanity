@@ -1,1 +1,2 @@
 - rich text editor payload cms
+https://www.sanity.io/docs/reference/api/sanity/router/SearchParam

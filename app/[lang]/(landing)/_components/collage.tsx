@@ -9,7 +9,6 @@ interface CollageProps {
 }
 
 const Collage = ({ tips }: CollageProps) => {
-
   return (
     <div className="h-full w-full pt-[58px]">
       <div className="relative w-full lg:h-1/2 flex justify-center items-center ">

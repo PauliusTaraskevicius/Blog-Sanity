@@ -14,6 +14,7 @@ export async function getProjects(): Promise<Project[]> {
             "image": image.asset->url,
             url,
             content
+            type
           }`
   );
 }
@@ -29,6 +30,7 @@ export async function getBlogs(): Promise<Blog[]> {
             "image": image.asset->url,
             url,
             content,
+            type
           }`
   );
 }
@@ -44,6 +46,7 @@ export async function getBlog(slug: string): Promise<Blog> {
       "image": image.asset->url,
       url,
       content,
+      type
     }`,
     { slug }
   );
@@ -60,6 +63,7 @@ export async function getTips(): Promise<Tip[]> {
             "image": image.asset->url,
             url,
             content,
+            type
           }`
   );
 }
@@ -75,7 +79,26 @@ export async function getTip(slug: string): Promise<Tip> {
       "image": image.asset->url,
       url,
       content,
+      type
     }`,
     { slug }
   );
+}
+
+export async function getSearchData(name?: string): Promise<Blog[] | Tip[] | Project[]> {
+  return createClient(config).fetch(
+    groq`*[(_type == "blog" || _type == "project" || _type == "tip" && !(_id in path("drafts.**")))
+	&& (pt::text(content) match "${name}*" || name match "${name}*" || description match "${name}*")] 
+	| score(pt::text(content) match "${name}*", boost(name match "${name}*", 3), boost(description match "${name}*", 2))
+	{
+    _createdAt,
+    name,
+    description,
+    "slug": slug.current,
+    "image": image.asset->url,
+    url,
+    content,
+    type
+    }`
+  )
 }

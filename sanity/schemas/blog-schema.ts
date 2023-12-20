@@ -20,6 +20,11 @@ const blog = {
       options: { source: "name" },
     },
     {
+      name: "type",
+      title: "Type",
+      type: "string",
+    },
+    {
       name: "image",
       title: "Image",
       type: "image",
