@@ -7,6 +7,7 @@ import { Blog } from "@/types/Blog";
 import { Project } from "@/types/Project";
 import { Tip } from "@/types/Tip";
 import Date from "@/components/date";
+import Banner from "@/components/banner";
 
 interface SearchResults {
   data: Blog[] | Tip[] | Project[];
@@ -16,7 +17,7 @@ interface SearchResults {
 const SearchResults = ({ data, searchParams }: SearchResults) => {
   return (
     <div className="relative h-full w-full opacity-[1px] lg:pt-[58px]">
-      <h1>Search results for term - &quot;{searchParams}&quot;</h1>
+      <Banner header={`"${searchParams}"`} />
       <div className="grid justify-center md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-7 my-10">
         {data.map((result) => (
           <div
@@ -37,7 +38,6 @@ const SearchResults = ({ data, searchParams }: SearchResults) => {
               <div className="pt-[20px] pb-[20px] bg-white dark:bg-transparent">
                 <span className="text-sm text-primary">
                   <Date dateString={result._createdAt} />
-                  <p>{result.type}</p>
                 </span>
                 <h2 className="text-2xl font-normal leading-normal pb-3 overflow-hidden cursor-pointer group-hover:underline pt-[18px]">
                   {result.name}

@@ -6,16 +6,34 @@ import { Tip } from "@/types/Tip";
 
 export async function getProjects(): Promise<Project[]> {
   return createClient(config).fetch(
-    groq`*[_type == "project"]{
+    groq`*[_type == "project" ]| order(_createdAt desc){
             _id,
             _createdAt,
             name,
+            description,
             "slug": slug.current,
             "image": image.asset->url,
             url,
-            content
+            content,
             type
           }`
+  );
+}
+
+export async function getProject(slug: string): Promise<Project> {
+  return createClient(config).fetch(
+    groq`*[_type == "project" && slug.current == $slug][0]{
+      _id,
+      _createdAt,
+      name,
+      description,
+      "slug": slug.current,
+      "image": image.asset->url,
+      url,
+      content,
+      type
+    }`,
+    { slug }
   );
 }
 

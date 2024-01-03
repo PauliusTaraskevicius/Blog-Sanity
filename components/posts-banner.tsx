@@ -1,19 +1,20 @@
+'use client'
+
 import Image from "next/image";
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
-import BlogList from "./blog-list";
 
-interface BlogBannerProps {
+interface PostsBannerProps {
   header: string;
   bannerClassName?: string;
   bannerImg?: string;
 }
 
-const BlogBanner = ({
+const PostsBanner = ({
   header,
   bannerClassName,
   bannerImg,
-}: BlogBannerProps) => {
+}: PostsBannerProps) => {
   const scrollDown = () => {
     window.scrollTo({ top: 500, behavior: "smooth" });
   };
@@ -52,4 +53,4 @@ const BlogBanner = ({
   );
 };
 
-export default BlogBanner;
+export default PostsBanner;

@@ -17,23 +17,23 @@ export default async function HomePage({ searchParams }: SearchProps) {
   const tips = await getTips();
   const data = await getSearchData(searchParams.name);
 
-  console.log(data);
-
   return (
     <>
-      <HomeBanner header="News, usefull tips, exiting projects and more from Pauly" />
-      <div className="flex flex-wrap justify-evenly max-w-[1400px] mx-auto my-0 px-5 py-0">
-        {data.length === 0 ? (
-          <>
-            <Collage tips={tips} />
-            <BlogList blogs={blogs} />
-          </>
-        ) : (
-          <>
-            <SearchResults data={data} searchParams={searchParams.name} />
-          </>
-        )}
-      </div>
+      {data.length === 0 ? (
+        <>
+          <HomeBanner header="News, usefull tips, exiting projects and more from Pauly" />
+          <div className="flex flex-wrap justify-evenly max-w-[1400px] mx-auto my-0 px-5 py-0">
+            <>
+              <Collage tips={tips} />
+              <BlogList blogs={blogs} />
+            </>
+          </div>
+        </>
+      ) : (
+        <div className="flex flex-wrap justify-evenly max-w-[1400px] mx-auto my-0 px-5 py-0">
+          <SearchResults data={data} searchParams={searchParams.name} />
+        </div>
+      )}
     </>
   );
 }

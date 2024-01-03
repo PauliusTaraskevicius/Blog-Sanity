@@ -1,13 +1,31 @@
 import { getProjects } from "@/sanity/sanity-utils";
 import ProjectsList from "./_components/projects-list";
+import { getSearchData } from "@/sanity/sanity-utils";
 
-const ProjectsPage = async () => {
+import HomeBanner from "../../_components/home-banner";
+import SearchResults from "../../_components/search-results";
+
+interface SearchProps {
+  searchParams: {
+    name: string;
+  };
+}
+
+const ProjectsPage = async ({ searchParams }: SearchProps) => {
   const projects = await getProjects();
+  const data = await getSearchData(searchParams.name);
 
   return (
-    <div className="w-full max-w-5xl p-5 pb-10 mx-auto mb-10 gap-5 columns-3 space-y-5">
-      <ProjectsList projects={projects} />
-    </div>
+    <>
+      {data.length === 0 ? (
+        <>
+          <HomeBanner header="Lorem Ipsum has been the industry's standard dummy text ever since the 1500s" />
+          <ProjectsList projects={projects} />
+        </>
+      ) : (
+        <SearchResults data={data} searchParams={searchParams.name} />
+      )}
+    </>
   );
 };
 
