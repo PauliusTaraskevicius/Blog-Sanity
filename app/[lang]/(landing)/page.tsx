@@ -5,6 +5,7 @@ import HomeBanner from "./_components/home-banner";
 import Collage from "./_components/collage";
 
 import SearchResults from "./_components/search-results";
+import SubscribeNewsLetter from "@/components/subscribe-newsletter";
 
 interface SearchProps {
   searchParams: {
@@ -21,6 +22,7 @@ export default async function HomePage({ searchParams }: SearchProps) {
     <>
       {data.length === 0 ? (
         <>
+          <SubscribeNewsLetter />
           <HomeBanner header="News, usefull tips, exiting projects and more from Pauly" />
           <div className="flex flex-wrap justify-evenly max-w-[1400px] mx-auto my-0 px-5 py-0">
             <>
