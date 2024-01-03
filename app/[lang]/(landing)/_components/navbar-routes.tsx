@@ -15,6 +15,11 @@ const NavbarRoutes = ({ lang }: { lang: Locale }) => {
       active: pathname === `/${lang}/blog`,
     },
     {
+      href: `/${lang}/tips`,
+      label: lang === "lt" ? "Patarimai" : lang === "ru" ? "Cоветы" : "Tips",
+      active: pathname === `/${lang}/blog`,
+    },
+    {
       href: `/${lang}/projects`,
       label:
         lang === "lt" ? "Projektai" : lang === "ru" ? "Проекты" : "Projects",

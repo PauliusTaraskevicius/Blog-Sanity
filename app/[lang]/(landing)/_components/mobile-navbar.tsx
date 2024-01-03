@@ -7,18 +7,27 @@ import { Locale } from "@/i18n.config";
 import { Menu } from "lucide-react";
 import NavbarRoutes from "./navbar-routes";
 
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { useScrollTop } from "@/hooks/use-scroll-top";
 import { cn } from "@/lib/utils";
+import SearchInput from "./search-input";
 
 const MobileNavbar = ({ lang }: { lang: Locale }) => {
   const scrolled = useScrollTop();
 
   return (
     <Sheet>
+      <SheetHeader className="block md:hidden fixed w-1/2 translate-y-2 translate-x-1/2 z-50">
+        <SearchInput />
+      </SheetHeader>
       <SheetTrigger
         className={cn(
-          "fixed flex justify-between items-center md:hidden hover:opacity-75 transition w-full h-[55px] z-50 border-b shadow-sm",
+          "fixed flex justify-between items-center md:hidden hover:opacity-75 transition w-full h-[55px] z-40 border-b shadow-sm",
           scrolled && "border-b- shadow-sm bg-white"
         )}
       >

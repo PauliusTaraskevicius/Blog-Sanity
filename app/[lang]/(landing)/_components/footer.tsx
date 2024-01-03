@@ -40,6 +40,13 @@ async function Footer({ lang }: { lang: Locale }) {
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuItem>
+                <Link href={`/${lang}/tips`} className="w-full">
+                  <p className="hover:bg-blue-600 hover:text-white transition cursor-pointer leading-loose">
+                    {footer.tips}
+                  </p>
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
                 <Link href={`/${lang}/projects`} className="w-full">
                   <p className="hover:bg-blue-600 hover:text-white transition cursor-pointer leading-loose">
                     {footer.projects}
@@ -54,7 +61,7 @@ async function Footer({ lang }: { lang: Locale }) {
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuItem>
-                <Link href={`/${lang}/contact`}className="w-full">
+                <Link href={`/${lang}/contact`} className="w-full">
                   <p className="hover:bg-blue-600 hover:text-white transition cursor-pointer leading-loose">
                     {footer.contact}
                   </p>
