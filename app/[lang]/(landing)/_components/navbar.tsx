@@ -1,13 +1,10 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 
 import SearchInput from "./search-input";
 import NavbarRoutes from "./navbar-routes";
 import { ModeToggle } from "@/components/mode-toggle";
-
-import { MailPlus, MailMinus } from "lucide-react";
 
 import {
   Tooltip,
@@ -15,26 +12,27 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import toast from "react-hot-toast";
+
 import { Locale } from "@/i18n.config";
 import MobileNavbar from "./mobile-navbar";
 import { useScrollTop } from "@/hooks/use-scroll-top";
 import { cn } from "@/lib/utils";
+import NewsletterModal from "@/components/newsletter-modal";
+import { usePathname } from "next/navigation";
+
+import { MailPlus } from "lucide-react";
 
 const Navbar = ({ lang }: { lang: Locale }) => {
-  const [subscribe, setSubscribe] = useState(false);
-
   const scrolled = useScrollTop();
+  const pathname = usePathname();
 
-  const subscribeEmail = () => {
-    setSubscribe(true);
-    toast.success("You have successfully subscribed!");
-  };
-
-  const unSubscribeEmail = () => {
-    setSubscribe(false);
-    toast.error("You have successfully unsubscribed!");
-  };
+  const pages =
+    pathname === `/${lang}` ||
+    pathname === `/${lang}/about` ||
+    pathname === `/${lang}/contact` ||
+    pathname === `/${lang}/projects` ||
+    pathname === `/${lang}/tips` ||
+    pathname === `/${lang}/blog`;
 
   return (
     <>
@@ -42,6 +40,7 @@ const Navbar = ({ lang }: { lang: Locale }) => {
       <nav
         className={cn(
           "hidden md:flex md:w-full fixed top-0 justify-between items-center z-50 border-b dark:border-white px-4 bg-transparent ",
+          pages ? "text-black dark:text-white" : "text-white dark:text-black",
           scrolled && "border-b border-white shadow-sm bg-white text-black"
         )}
       >
@@ -61,17 +60,7 @@ const Navbar = ({ lang }: { lang: Locale }) => {
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger>
-                {subscribe ? (
-                  <MailMinus
-                    onClick={unSubscribeEmail}
-                    className="cursor-pointer w-5 h-5"
-                  />
-                ) : (
-                  <MailPlus
-                    onClick={subscribeEmail}
-                    className="cursor-pointer w-5 h-5"
-                  />
-                )}
+                <NewsletterModal />
               </TooltipTrigger>
               <TooltipContent className="text-xs">
                 <p>

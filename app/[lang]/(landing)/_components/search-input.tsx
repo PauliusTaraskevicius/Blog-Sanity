@@ -30,7 +30,7 @@ const SearchInput = () => {
 
   return (
     <div className="relative">
-      <SearchIcon className="h-4 w-4 absolute top-3 left-3 text-black" />
+      <SearchIcon className="h-4 w-4 absolute top-3 left-3" />
       <Input
         onChange={(e) => setValue(e.target.value)}
         value={value}

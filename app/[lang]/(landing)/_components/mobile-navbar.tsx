@@ -16,6 +16,7 @@ import {
 import { useScrollTop } from "@/hooks/use-scroll-top";
 import { cn } from "@/lib/utils";
 import SearchInput from "./search-input";
+import SubscribeNewsLetter from "@/components/subscribe-newsletter";
 
 const MobileNavbar = ({ lang }: { lang: Locale }) => {
   const scrolled = useScrollTop();
@@ -39,7 +40,7 @@ const MobileNavbar = ({ lang }: { lang: Locale }) => {
         <div className="flex justify-center items-center py-[150px]">
           <div className="w-full border-r shadow-sm">
             <NavbarRoutes lang={lang} />
-            <div className="border-b shadow-sm" />
+            <SubscribeNewsLetter />
             <ul className="text-[11px] px-2 font-semibold">
               <li className="py-2">
                 <Link href={`/${lang}/privacy`}>

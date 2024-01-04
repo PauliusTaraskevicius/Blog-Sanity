@@ -17,7 +17,7 @@ const NavbarRoutes = ({ lang }: { lang: Locale }) => {
     {
       href: `/${lang}/tips`,
       label: lang === "lt" ? "Patarimai" : lang === "ru" ? "Cоветы" : "Tips",
-      active: pathname === `/${lang}/blog`,
+      active: pathname === `/${lang}/tips`,
     },
     {
       href: `/${lang}/projects`,
@@ -45,9 +45,9 @@ const NavbarRoutes = ({ lang }: { lang: Locale }) => {
           key={route.href}
           href={route.href}
           className={cn(
-            "flex md:justify-center items-center text-[16px] py-4 md:text-base font-semibold whitespace-nowrap md:hover:border-black border-transparent border-b-[3px] transition-all duration-300 md:dark:hover:border-white",
+            "flex md:justify-center items-center text-[16px] py-4 md:text-base font-semibold whitespace-nowrap md:hover:border-black border-transparent border-b-[3px] md:dark:hover:border-white",
             route.active &&
-              "border-b-[3px] md:border-black md:dark:border-white transition-all"
+              "border-b-[3px] md:border-black md:dark:border-white"
           )}
         >
           {route.label}

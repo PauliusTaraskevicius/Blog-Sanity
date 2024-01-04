@@ -37,10 +37,9 @@ export async function POST(req: Request, res: NextResponse) {
       );
     }
 
-    // return res.status(201).json({ message: "success" });
     return NextResponse.json(res);
   } catch (error) {
     console.log("[API_SUBSCRIBE]", error);
-    return new NextResponse("Internal Error", { status: 500 });
+    return new NextResponse(`${error}`, { status: 500 });
   }
 }
