@@ -1,10 +1,11 @@
 "use client";
 
 import Link from "next/link";
-
 import SearchInput from "./search-input";
 import NavbarRoutes from "./navbar-routes";
 import { ModeToggle } from "@/components/mode-toggle";
+import { cn } from "@/lib/utils";
+import { MailPlus } from "lucide-react";
 
 import {
   Tooltip,
@@ -16,31 +17,19 @@ import {
 import { Locale } from "@/i18n.config";
 import MobileNavbar from "./mobile-navbar";
 import { useScrollTop } from "@/hooks/use-scroll-top";
-import { cn } from "@/lib/utils";
-import NewsletterModal from "@/components/newsletter-modal";
-import { usePathname } from "next/navigation";
+import { useModal } from "@/hooks/use-modal";
 
-import { MailPlus } from "lucide-react";
 
 const Navbar = ({ lang }: { lang: Locale }) => {
   const scrolled = useScrollTop();
-  const pathname = usePathname();
-
-  const pages =
-    pathname === `/${lang}` ||
-    pathname === `/${lang}/about` ||
-    pathname === `/${lang}/contact` ||
-    pathname === `/${lang}/projects` ||
-    pathname === `/${lang}/tips` ||
-    pathname === `/${lang}/blog`;
+  const modal = useModal();
 
   return (
     <>
       <MobileNavbar lang={lang} />
       <nav
         className={cn(
-          "hidden md:flex md:w-full fixed top-0 justify-between items-center z-50 border-b dark:border-white px-4 bg-transparent ",
-          pages ? "text-black dark:text-white" : "text-white dark:text-black",
+          "hidden md:flex md:w-full fixed top-0 justify-between items-center z-50 border-b dark:border-white px-4 bg-white text-black",
           scrolled && "border-b border-white shadow-sm bg-white text-black"
         )}
       >
@@ -60,7 +49,12 @@ const Navbar = ({ lang }: { lang: Locale }) => {
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger>
-                <NewsletterModal />
+                <div
+                  onClick={modal.onOpen}
+                  className="bg-transparent text-black hover:bg-transparent"
+                >
+                  <MailPlus className="cursor-pointer w-5 h-5" />
+                </div>
               </TooltipTrigger>
               <TooltipContent className="text-xs">
                 <p>

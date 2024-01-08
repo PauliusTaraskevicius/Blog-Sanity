@@ -1,34 +1,49 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { MailPlus } from "lucide-react";
+import { useState } from "react";
+
+import axios from "axios";
+import toast from "react-hot-toast";
+
+import { Button } from "./ui/button";
+import { Input } from "./ui/input";
 import {
   Dialog,
   DialogContent,
   DialogDescription,
+  DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
+
 } from "@/components/ui/dialog";
 
-import SubscribeNewsLetter from "./subscribe-newsletter";
+import { useModal } from "@/hooks/use-modal";
 
 const NewsletterModal = () => {
-  const [isMounted, setIsMounted] = useState(false);
+  const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
+  const modal = useModal();
 
-  if (!isMounted) {
-    return null;
-  }
+  const subscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    try {
+      setLoading(true);
+      const response = await axios.post("/api/subscribe", { email });
+      setEmail("");
+      modal.onClose();
+      toast.success("You have successfully subscribed!");
+      return response;
+    } catch (e: any) {
+      toast.error("Something went wrong.Try again later.");
+      modal.onClose();
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
-    <Dialog>
-      <DialogTrigger className="flex justify-center items-center">
-        <MailPlus className="cursor-pointer w-5 h-5" />
-      </DialogTrigger>
+    <Dialog open={modal.isOpen} onOpenChange={modal.onClose}>
       <DialogContent>
         <DialogHeader>
           <DialogTitle className="text-center py-2">
@@ -39,7 +54,32 @@ const NewsletterModal = () => {
             sent to your inbox.
           </DialogDescription>
         </DialogHeader>
-        <SubscribeNewsLetter />
+        <DialogFooter>
+          <div className="flex justify-center items-center h-full w-full space-y-4 overflow-hidden">
+            {" "}
+            <div
+              className="flex w-full md:justify-center md:items-center space-x-4 py-2 md:py-0 "
+              onSubmit={subscribe}
+            >
+              <div className="w-full md:w-1/2 md:px-2 md:py-2">
+                <Input
+                  required
+                  id="email-input"
+                  name="email"
+                  type="email"
+                  placeholder="What's your email address"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </div>
+              <div>
+                <Button disabled={loading} type="submit" onClick={subscribe}>
+                  Subscribe
+                </Button>
+              </div>
+            </div>
+          </div>
+        </DialogFooter>
       </DialogContent>
     </Dialog>
   );
