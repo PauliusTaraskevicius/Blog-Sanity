@@ -34,7 +34,7 @@ const SearchInput = () => {
       <Input
         onChange={(e) => setValue(e.target.value)}
         value={value}
-        className="w-full md:w-[300px] xl:w-[600px] pl-9 rounded-full bg-transparent focus-visible:ring-slate-200 dark:focus-visible:ring-white"
+        className="w-full md:w-[300px] xl:w-[800px] pl-9 rounded-full bg-transparent "
         placeholder="Search..."
       />
     </div>

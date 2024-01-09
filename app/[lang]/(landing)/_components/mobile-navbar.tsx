@@ -3,7 +3,6 @@
 import Link from "next/link";
 
 import { Locale } from "@/i18n.config";
-
 import { Menu } from "lucide-react";
 import NavbarRoutes from "./navbar-routes";
 

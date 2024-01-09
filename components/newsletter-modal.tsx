@@ -4,6 +4,7 @@ import { useState } from "react";
 
 import axios from "axios";
 import toast from "react-hot-toast";
+import { Loader } from "lucide-react";
 
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
@@ -14,7 +15,6 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-
 } from "@/components/ui/dialog";
 
 import { useModal } from "@/hooks/use-modal";
@@ -25,8 +25,8 @@ const NewsletterModal = () => {
 
   const modal = useModal();
 
-  const subscribe = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const subscribe = async () => {
+  
     try {
       setLoading(true);
       const response = await axios.post("/api/subscribe", { email });
@@ -73,9 +73,13 @@ const NewsletterModal = () => {
                 />
               </div>
               <div>
-                <Button disabled={loading} type="submit" onClick={subscribe}>
-                  Subscribe
-                </Button>
+                {loading ? (
+                  <Loader className="w-6 h-6 animate-spin text-black" />
+                ) : (
+                  <Button disabled={loading} type="submit" onClick={subscribe}>
+                    Subscribe
+                  </Button>
+                )}
               </div>
             </div>
           </div>

@@ -3,28 +3,25 @@
 import axios from "axios";
 import { useState } from "react";
 import toast from "react-hot-toast";
-
+import { Loader } from "lucide-react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 
 const SubscribeNewsLetter = () => {
   const [email, setEmail] = useState("");
-  const [state, setState] = useState("idle");
-  const [errorMsg, setErrorMsg] = useState(null);
+  const [loading, setLoading] = useState(false);
 
-  const subscribe = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setState("Loading");
+  const subscribe = async () => {
     try {
+      setLoading(true);
       const response = await axios.post("/api/subscribe", { email });
-      setState("Success");
       setEmail("");
       toast.success("You have successfully subscribed!");
       return response;
     } catch (e: any) {
-      setErrorMsg(e.response.data.error);
-      setState("Error");
       toast.error("Something went wrong.Try again later.");
+    } finally {
+      setLoading(false);
     }
   };
   return (
@@ -45,14 +42,15 @@ const SubscribeNewsLetter = () => {
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
-        <div>
-          <Button
-            disabled={state === "Loading"}
-            type="submit"
-            onClick={subscribe}
-          >
-            Subscribe
-          </Button>
+
+        <div className="flex justify-center items-center">
+          {loading ? (
+            <Loader className="w-6 h-6 animate-spin text-black" />
+          ) : (
+            <Button disabled={loading} type="submit" onClick={subscribe}>
+              Subscribe
+            </Button>
+          )}
         </div>
       </form>
     </div>
