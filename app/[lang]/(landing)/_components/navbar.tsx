@@ -4,6 +4,7 @@ import Link from "next/link";
 import SearchInput from "./search-input";
 import NavbarRoutes from "./navbar-routes";
 import { ModeToggle } from "@/components/mode-toggle";
+
 import { cn } from "@/lib/utils";
 import { MailPlus } from "lucide-react";
 
@@ -18,7 +19,6 @@ import { Locale } from "@/i18n.config";
 import MobileNavbar from "./mobile-navbar";
 import { useScrollTop } from "@/hooks/use-scroll-top";
 import { useModal } from "@/hooks/use-modal";
-
 
 const Navbar = ({ lang }: { lang: Locale }) => {
   const scrolled = useScrollTop();
