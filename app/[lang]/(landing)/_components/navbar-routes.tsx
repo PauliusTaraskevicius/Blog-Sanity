@@ -32,11 +32,11 @@ const NavbarRoutes = ({ lang }: { lang: Locale }) => {
       active: pathname === `/${lang}/about`,
     },
     {
-      href: `/${lang}/contact`,
+      href: `#`,
       // label:
       //   lang === "lt" ? "Kontaktai" : lang === "ru" ? "Kонтакт" : "Contacts",
       // active: pathname === `/${lang}/contact`,
-      component: <DropdownContact name={lang === "lt" ? "Kontaktai" : lang === "ru" ? "Kонтакт" : "Contacts"} customClass="flex md:justify-center items-center text-[16px] py-4 md:text-base font-semibold whitespace-nowrap border-none bg-transparent"/>
+      component: <DropdownContact name={lang === "lt" ? "Kontaktai" : lang === "ru" ? "Kонтакт" : "Contacts"} customClass="flex md:justify-center items-center text-[16px] py-4 md:text-base font-semibold whitespace-nowrap border-none bg-transparent px-0 hover:bg-transparent hover:dark:text-white"/>
     },
   ];
 

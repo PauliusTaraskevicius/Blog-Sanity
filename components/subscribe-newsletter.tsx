@@ -44,10 +44,11 @@ const SubscribeNewsLetter = () => {
         </div>
 
         <div className="flex justify-center items-center">
+          
           {loading ? (
-            <Loader className="w-6 h-6 animate-spin text-black" />
+            <Loader className="w-6 h-6 animate-spin text-black dark:text-white" />
           ) : (
-            <Button disabled={loading} type="submit" onClick={subscribe}>
+            <Button disabled={loading} type="submit" onClick={subscribe} className="">
               Subscribe
             </Button>
           )}

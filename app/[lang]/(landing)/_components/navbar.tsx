@@ -7,6 +7,7 @@ import { ModeToggle } from "@/components/mode-toggle";
 
 import { cn } from "@/lib/utils";
 import { MailPlus } from "lucide-react";
+import { Code2 } from "lucide-react";
 
 import {
   Tooltip,
@@ -29,15 +30,22 @@ const Navbar = ({ lang }: { lang: Locale }) => {
       <MobileNavbar lang={lang} />
       <nav
         className={cn(
-          "hidden md:flex md:w-full fixed top-0 justify-between items-center z-50 border-b dark:border-white px-4 bg-white text-black",
+          "hidden lg:flex md:w-full fixed top-0 justify-between items-center z-50 border-b dark:border-white px-4 bg-white dark:bg-transparent text-black dark:text-white",
           scrolled && "border-b border-white shadow-sm bg-white text-black"
         )}
       >
         <div className="h-[55px] left-0 flex items-center">
           <div className="h-full flex items-center text-center justify-center gap-x-4">
-            <Link href={`/${lang}/`}>
-              <div className="">LOGO</div>
+            <Link
+              href={`/${lang}/`}
+              className="flex items-center justify-center space-x-2 pb-1"
+            >
+              <Code2 className="w-4 h-4 2xl:w-6 2xl:h-6 dark:text-white" />
+              <div className="logo text-xl 2xl:text-2xl font-bold dark:text-white">
+                Paulydev
+              </div>
             </Link>
+
             <NavbarRoutes lang={lang} />
           </div>
         </div>
@@ -53,7 +61,7 @@ const Navbar = ({ lang }: { lang: Locale }) => {
                   onClick={modal.onOpen}
                   className="bg-transparent text-black hover:bg-transparent"
                 >
-                  <MailPlus className="cursor-pointer w-5 h-5" />
+                  <MailPlus className="cursor-pointer w-5 h-5 dark:text-white" />
                 </div>
               </TooltipTrigger>
               <TooltipContent className="text-xs">

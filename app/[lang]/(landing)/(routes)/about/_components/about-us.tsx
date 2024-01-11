@@ -18,7 +18,7 @@ const AboutUs = () => {
         </h1>
       </div>
 
-      <div className="profile-bg flex justify-end h-auto w-4/5 md:w-3/5">
+      <div className="bg-gradient-to-r from-white via-neutral-300 to-neutral-400 flex justify-end h-auto w-4/5 md:w-3/5">
         <Image
           src={profileImg}
           alt="profile"
@@ -31,7 +31,7 @@ const AboutUs = () => {
       <div className="2xl:absolute 2xl:left-10 2xl:bottom-14">
         <div className="flex flex-col w-[230px] md:w-[300px] px-2 py-2 space-y-2 font-medium">
           <a
-            className="flex justify-between relative border-white shadow-md"
+            className="flex justify-between relative border-white shadow-md hover:bg-gray-200 hover:rounded-md transition pl-2 py-1"
             href="https://github.com/PauliusTaraskevicius"
             target="_blank"
             rel="noopener noreferrer"
@@ -42,13 +42,13 @@ const AboutUs = () => {
               <span>Github</span>
             </div>
 
-            <div className="pr-2">
-              <ArrowUpRight className="h-5 w-5" />
+            <div className="flex justify-center items-center pr-2">
+              <ArrowUpRight className="h-4 w-4" />
             </div>
           </a>
 
           <a
-            className="flex justify-between border-white shadow-md"
+            className="flex justify-between border-white shadow-md hover:bg-gray-200 hover:rounded-md transition pl-2 py-1"
             href="https://www.linkedin.com/in/paulius-tara%C5%A1kevi%C4%8Dius-916b83234/"
             target="_blank"
             rel="noopener noreferrer"
@@ -58,13 +58,13 @@ const AboutUs = () => {
               <span>Linkedin</span>
             </div>
 
-            <div className="pr-2">
-              <ArrowUpRight className="h-5 w-5" />
+            <div className="flex justify-center items-center pr-2">
+              <ArrowUpRight className="h-4 w-4" />
             </div>
           </a>
 
           <a
-            className="flex justify-between border-white shadow-md"
+            className="flex justify-between border-white shadow-md hover:bg-gray-200 hover:rounded-md transition pl-2 py-1"
             href="https://www.facebook.com/paulius.taraskevicius"
             target="_blank"
             rel="noopener noreferrer"
@@ -73,8 +73,8 @@ const AboutUs = () => {
               <Facebook className="h-4 w-4" />
               <span>Facebook</span>
             </div>
-            <div className="pr-2">
-              <ArrowUpRight className="h-5 w-5" />
+            <div className="flex justify-center items-center pr-2">
+              <ArrowUpRight className="h-4 w-4" />
             </div>
           </a>
         </div>

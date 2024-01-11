@@ -4,6 +4,8 @@ import Link from "next/link";
 
 import { Locale } from "@/i18n.config";
 import { Menu } from "lucide-react";
+import { Code2 } from "lucide-react";
+
 import NavbarRoutes from "./navbar-routes";
 
 import {
@@ -22,24 +24,34 @@ const MobileNavbar = ({ lang }: { lang: Locale }) => {
 
   return (
     <Sheet>
-      <SheetHeader className="block md:hidden fixed w-1/2 translate-y-2 translate-x-1/2 z-50">
+      <SheetHeader className="block lg:hidden fixed w-1/2 translate-y-2 translate-x-1/2 z-[99999]">
         <SearchInput />
       </SheetHeader>
       <SheetTrigger
         className={cn(
-          "fixed flex justify-between items-center md:hidden hover:opacity-75 transition w-full h-[55px] z-40 border-b shadow-sm",
+          "fixed flex justify-between items-center lg:hidden hover:opacity-75 transition w-full h-[55px] border-b shadow-sm bg-white z-50",
           scrolled && "border-b- shadow-sm bg-white"
         )}
       >
         <Menu className="ml-2 text-black dark:text-white" />
-        <h1 className="pr-2">LOGO</h1>
       </SheetTrigger>
 
       <SheetContent side="left" className="p-0 bg-white">
-        <div className="flex justify-center items-center py-[150px]">
+        <div className="flex justify-center items-center py-[100px] ">
           <div className="w-full border-r shadow-sm">
-            <NavbarRoutes lang={lang} />
-            <SubscribeNewsLetter />
+            <div className="flex justify-center items-center space-x-1 px-2  ">
+              <Code2 className="w-8 h-8 dark:text-white" />
+              <div className="logo text-2xl font-bold dark:text-white">
+                <Link href="/">Paulydev</Link>
+              </div>
+            </div>
+            <div className="pt-10">
+              <NavbarRoutes lang={lang} />
+            </div>
+            <div className="pb-4">
+              <SubscribeNewsLetter />
+            </div>
+
             <ul className="text-[11px] px-2 font-semibold">
               <li className="py-2">
                 <Link href={`/${lang}/privacy`}>
@@ -57,15 +69,6 @@ const MobileNavbar = ({ lang }: { lang: Locale }) => {
                     : lang === "ru"
                     ? "Pеченье"
                     : "Cookies"}
-                </Link>
-              </li>
-              <li className="py-2">
-                <Link href={`/${lang}/contact`}>
-                  {lang === "lt"
-                    ? "Kontaktai"
-                    : lang === "ru"
-                    ? "Kонтакт"
-                    : "Contact"}
                 </Link>
               </li>
               <li className="py-2">

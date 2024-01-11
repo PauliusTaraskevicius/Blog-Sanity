@@ -74,7 +74,7 @@ const NewsletterModal = () => {
               </div>
               <div>
                 {loading ? (
-                  <Loader className="w-6 h-6 animate-spin text-black" />
+                  <Loader className="w-6 h-6 animate-spin text-black dark:text-white" />
                 ) : (
                   <Button disabled={loading} type="submit" onClick={subscribe}>
                     Subscribe
