@@ -19,7 +19,7 @@ const Blogs = async ({ searchParams }: SearchProps) => {
     <>
       {data.length === 0 ? (
         <>
-          <HomeBanner header="Lorem Ipsum has been the industry's standard dummy text ever since the 1500s" />
+          <HomeBanner header="Most recent articles on software development" />
           <BlogList blogs={blogs} />
         </>
       ) : (

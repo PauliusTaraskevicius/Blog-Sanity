@@ -18,7 +18,7 @@ const Tips = async ({ searchParams }: SearchProps) => {
     <>
       {data.length === 0 ? (
         <>
-          <HomeBanner header="Lorem Ipsum has been the industry's standard dummy text ever since the 1500s" />
+          <HomeBanner header="Tips, tricks for software development" />
           <TipsList tips={tips} />
         </>
       ) : (

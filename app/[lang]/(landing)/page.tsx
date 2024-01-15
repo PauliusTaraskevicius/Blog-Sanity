@@ -23,7 +23,7 @@ export default async function HomePage({ searchParams }: SearchProps) {
       {data.length === 0 ? (
         <>
 
-          <HomeBanner header="News, usefull tips, exiting projects and more from Pauly" />
+          <HomeBanner header="Articles, usefull tips on software development, exiting projects and more from Pauly" />
           <div className="flex flex-wrap justify-evenly max-w-[1400px] mx-auto my-0 px-5 py-0">
             <>
               <Collage tips={tips} />

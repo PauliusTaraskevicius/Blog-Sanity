@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 import { ChevronDown } from "lucide-react";
+import CookiesModal from "@/components/cookies-modal";
 
 async function Footer({ lang }: { lang: Locale }) {
   const { footer } = await getDictionary(lang);
@@ -60,13 +61,6 @@ async function Footer({ lang }: { lang: Locale }) {
                   </p>
                 </Link>
               </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link href={`/${lang}/contact`} className="w-full">
-                  <p className="hover:bg-blue-600 hover:text-white transition cursor-pointer leading-loose">
-                    {footer.contact}
-                  </p>
-                </Link>
-              </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
@@ -77,16 +71,13 @@ async function Footer({ lang }: { lang: Locale }) {
         <div className="hidden md:block">
           <ul className="flex justify-center items-center gap-x-2 text-xs font-semibold text-muted-foreground">
             <li className="px-1 cursor-pointer hover:text-blue-600 transition">
-              {footer.privacy}
+              <Link href="#">{footer.privacy}</Link>
             </li>
             <li className="px-1 cursor-pointer hover:text-blue-600 transition">
-              {footer.cookies}
+              <CookiesModal trigger={footer.cookies} />
             </li>
             <li className="px-1 cursor-pointer hover:text-blue-600 transition">
-              {footer.contact}
-            </li>
-            <li className="px-1 cursor-pointer hover:text-blue-600 transition">
-              {footer.about}
+              <Link href="/about">{footer.about}</Link>
             </li>
             <li className="px-1 cursor-pointer hover:text-blue-600 transition">
               {footer.warning}

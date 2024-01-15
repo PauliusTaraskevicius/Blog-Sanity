@@ -19,7 +19,7 @@ const ProjectsPage = async ({ searchParams }: SearchProps) => {
     <>
       {data.length === 0 ? (
         <>
-          <HomeBanner header="Lorem Ipsum has been the industry's standard dummy text ever since the 1500s" />
+          <HomeBanner header="Most recent projects made" />
           <ProjectsList projects={projects} />
         </>
       ) : (
