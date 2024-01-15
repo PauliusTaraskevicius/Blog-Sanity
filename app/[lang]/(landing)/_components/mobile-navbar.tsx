@@ -18,6 +18,7 @@ import { useScrollTop } from "@/hooks/use-scroll-top";
 import { cn } from "@/lib/utils";
 import SearchInput from "./search-input";
 import SubscribeNewsLetter from "@/components/subscribe-newsletter";
+import CookiesModal from "@/components/cookies-modal";
 
 const MobileNavbar = ({ lang }: { lang: Locale }) => {
   const scrolled = useScrollTop();
@@ -54,22 +55,15 @@ const MobileNavbar = ({ lang }: { lang: Locale }) => {
 
             <ul className="text-[11px] px-2 font-semibold">
               <li className="py-2">
-                <Link href={`/${lang}/privacy`}>
-                  {lang === "lt"
-                    ? "Privatumo politika"
-                    : lang === "ru"
-                    ? "Kонфиденциальность"
-                    : "Privacy"}
-                </Link>
-              </li>
-              <li className="py-2">
-                <Link href={`/${lang}/cookies`}>
-                  {lang === "lt"
-                    ? "Slapukai"
-                    : lang === "ru"
-                    ? "Pеченье"
-                    : "Cookies"}
-                </Link>
+                <CookiesModal
+                  trigger={
+                    lang === "lt"
+                      ? "Slapukai"
+                      : lang === "ru"
+                      ? "Pеченье"
+                      : "Cookies"
+                  }
+                />
               </li>
               <li className="py-2">
                 <Link href={`/${lang}/about`}>

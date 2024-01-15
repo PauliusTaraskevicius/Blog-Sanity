@@ -71,9 +71,6 @@ async function Footer({ lang }: { lang: Locale }) {
         <div className="hidden md:block">
           <ul className="flex justify-center items-center gap-x-2 text-xs font-semibold text-muted-foreground">
             <li className="px-1 cursor-pointer hover:text-blue-600 transition">
-              <Link href="#">{footer.privacy}</Link>
-            </li>
-            <li className="px-1 cursor-pointer hover:text-blue-600 transition">
               <CookiesModal trigger={footer.cookies} />
             </li>
             <li className="px-1 cursor-pointer hover:text-blue-600 transition">

@@ -103,7 +103,9 @@ export async function getTip(slug: string): Promise<Tip> {
   );
 }
 
-export async function getSearchData(name?: string): Promise<Blog[] | Tip[] | Project[]> {
+export async function getSearchData(
+  name?: string
+): Promise<Blog[] | Tip[] | Project[]> {
   return createClient(config).fetch(
     groq`*[(_type == "blog" || _type == "project" || _type == "tip" && !(_id in path("drafts.**")))
 	&& (pt::text(content) match "${name}*" || name match "${name}*" || description match "${name}*")] 
@@ -118,5 +120,5 @@ export async function getSearchData(name?: string): Promise<Blog[] | Tip[] | Pro
     content,
     type
     }`
-  )
+  );
 }
