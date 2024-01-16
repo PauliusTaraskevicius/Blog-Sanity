@@ -30,9 +30,9 @@ const ProjectsList = ({ projects }: ProjectsListProps) => {
                 />
               </div>
               <div className="pt-[20px] pb-[20px] bg-white dark:bg-transparent">
-                {/* <span className="text-sm text-primary">
+                <span className="text-sm text-primary">
                   <Date dateString={project._createdAt} />
-                </span> */}
+                </span>
                 <h2 className="text-2xl font-normal leading-normal pb-3 overflow-hidden cursor-pointer group-hover:underline pt-[18px]">
                   {project.name}
                 </h2>

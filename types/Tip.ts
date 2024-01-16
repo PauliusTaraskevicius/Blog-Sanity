@@ -9,4 +9,5 @@ export type Tip = {
   image: string;
   url: string;
   content: PortableTextBlock[];
+  type: string;
 };

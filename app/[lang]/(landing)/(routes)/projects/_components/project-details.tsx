@@ -23,9 +23,9 @@ const ProjectDetails = ({ project }: ProjectDetailsProps) => {
           <h1 className="text-black dark:text-white text-4xl md:text-7xl font-normal text-center">
             {project.name}
           </h1>
-          {/* <span className="pt-8 text-base">
+          <span className="pt-8 text-base">
             Publikuota - <Date dateString={project._createdAt} />
-          </span> */}
+          </span>
         </header>
 
         <div className="text-lg text-black dark:text-white mt-5">

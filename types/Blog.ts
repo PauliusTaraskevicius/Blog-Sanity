@@ -9,4 +9,5 @@ export type Blog = {
   image: string;
   url: string;
   content: PortableTextBlock[];
+  type: string;
 };
