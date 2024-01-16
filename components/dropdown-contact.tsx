@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Github } from "lucide-react";
 import { Linkedin } from "lucide-react";
 import { Facebook } from "lucide-react";
+import { FileCheck2 } from 'lucide-react';
 
 import {
   DropdownMenu,
@@ -73,6 +74,19 @@ const DropdownContact = ({ name, customClass }: DropdownContactProps) => {
                 {" "}
                 <Facebook className="h-4 w-4" />
                 <span>Facebook</span>
+              </div>
+            </Link>
+          </DropdownMenuItem>
+          <DropdownMenuItem className="px-2 hover:bg-gray-200 transition">
+            {" "}
+            <Link
+              className="flex justify-center items-center py-1"
+              href="https://drive.google.com/file/d/1rvRD-Np22RSuGR85vcPdU0P0WAM5hjLz/view?usp=sharing"
+            >
+              <div className="flex justify-center items-center space-x-1">
+                {" "}
+                <FileCheck2 className="h-4 w-4" />
+                <span>CV</span>
               </div>
             </Link>
           </DropdownMenuItem>

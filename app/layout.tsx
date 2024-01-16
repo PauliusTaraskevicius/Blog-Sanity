@@ -10,8 +10,8 @@ const noto_sans = Noto_Sans({
 })
 
 export const metadata: Metadata = {
-  title: "Blog",
-  description: "Programming blog",
+  title: "PaulyDev",
+  description: "Articles, tips, projects on software development",
 };
 
 export default function RootLayout({

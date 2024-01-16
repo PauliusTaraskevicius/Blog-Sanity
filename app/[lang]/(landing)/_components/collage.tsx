@@ -19,6 +19,7 @@ const Collage = ({ tips }: CollageProps) => {
           <Link href={`/tips/${tips[tips.length - 1].slug}`}>
             <div className="cursor-pointer group-hover:brightness-90 transition">
               <Image
+                unoptimized
                 priority
                 height={500}
                 width={500}
@@ -58,6 +59,7 @@ const Collage = ({ tips }: CollageProps) => {
               <Link href={`/tips/${tips[tips.length - 2].slug}`}>
                 <div className="cursor-pointer group-hover:brightness-90 transition">
                   <Image
+                    unoptimized
                     priority
                     height={500}
                     width={500}
@@ -87,6 +89,7 @@ const Collage = ({ tips }: CollageProps) => {
             <Link href={`/tips/${tips[tips.length - 3].slug}`}>
               <div className="cursor-pointer group-hover:brightness-90 transition">
                 <Image
+                  unoptimized
                   priority
                   height={500}
                   width={500}
