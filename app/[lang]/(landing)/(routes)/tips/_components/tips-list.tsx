@@ -20,7 +20,6 @@ const TipsList = ({ tips }: TipsListProps) => {
             <Link href={`/tips/${tip.slug}`}>
               <div className="cursor-pointer group-hover:brightness-90 transition">
                 <Image
-                  priority
                   height={500}
                   width={500}
                   className="h-56 lg:h-60 w-full object-cover bg-[#e8e8e8] "

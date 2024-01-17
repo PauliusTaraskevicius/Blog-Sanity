@@ -21,10 +21,9 @@ const BlogList = ({ blogs }: BlogListProps) => {
             <Link href={`/blog/${blog.slug}`}>
               <div className="cursor-pointer group-hover:brightness-90 transition">
                 <Image
-                  priority
                   height={500}
                   width={500}
-                  className="h-56 lg:h-60 w-full object-cover bg-[#e8e8e8] "
+                  className="h-56 lg:h-60 w-full object-cover bg-[#e8e8e8]"
                   src={blog.image}
                   alt={blog.name}
                 />

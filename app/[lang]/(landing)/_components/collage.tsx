@@ -20,7 +20,6 @@ const Collage = ({ tips }: CollageProps) => {
             <div className="cursor-pointer group-hover:brightness-90 transition">
               <Image
                 unoptimized
-                priority
                 height={500}
                 width={500}
                 className="h-56 lg:h-1/2 w-screen object-cover"
@@ -60,7 +59,6 @@ const Collage = ({ tips }: CollageProps) => {
                 <div className="cursor-pointer group-hover:brightness-90 transition">
                   <Image
                     unoptimized
-                    priority
                     height={500}
                     width={500}
                     className="h-56 lg:h-3/4 w-full object-cover bg-[#e8e8e8] "
@@ -90,7 +88,6 @@ const Collage = ({ tips }: CollageProps) => {
               <div className="cursor-pointer group-hover:brightness-90 transition">
                 <Image
                   unoptimized
-                  priority
                   height={500}
                   width={500}
                   className="h-56 lg:h-full w-full object-cover"
