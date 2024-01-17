@@ -23,7 +23,7 @@ const PostsCarousel = ({ data }: PostsCarouselProps) => {
         }),
       ]}
     >
-      <CarouselContent className="brightness-90">
+      <CarouselContent>
         {data.map((post) => (
           <CarouselItem className="relative" key={post._id}>
             <Link href={`/projects/${post.slug}`}>
@@ -34,7 +34,7 @@ const PostsCarousel = ({ data }: PostsCarouselProps) => {
                 priority
                 height={500}
                 width={500}
-                className="h-56 lg:h-1/2 w-full object-cover"
+                className="h-56 lg:h-60 w-full object-cover"
               />
               <div className="absolute top-1/2 left-10">
                 <h1 className="text-white text-4xl font-bold">{post.name}</h1>
