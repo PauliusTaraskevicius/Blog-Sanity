@@ -13,12 +13,13 @@ const Collage = ({ tips }: CollageProps) => {
     <div className="h-full w-full pt-[58px]">
       <div className="relative w-full lg:h-1/2 flex justify-center items-center ">
         <div
-          key={tips[0]._id} 
+          key={tips[0]._id}
           className="rounded-lg max-w-xs md:max-w-none group"
         >
           <Link href={`/tips/${tips[tips.length - 1].slug}`}>
             <div className="cursor-pointer group-hover:brightness-90 transition">
               <Image
+                priority
                 unoptimized
                 height={500}
                 width={500}
@@ -58,7 +59,6 @@ const Collage = ({ tips }: CollageProps) => {
               <Link href={`/tips/${tips[tips.length - 2].slug}`}>
                 <div className="cursor-pointer group-hover:brightness-90 transition">
                   <Image
-                    unoptimized
                     height={500}
                     width={500}
                     className="h-56 lg:h-3/4 w-full object-cover bg-[#e8e8e8] "
@@ -87,7 +87,6 @@ const Collage = ({ tips }: CollageProps) => {
             <Link href={`/tips/${tips[tips.length - 3].slug}`}>
               <div className="cursor-pointer group-hover:brightness-90 transition">
                 <Image
-                  unoptimized
                   height={500}
                   width={500}
                   className="h-56 lg:h-full w-full object-cover"

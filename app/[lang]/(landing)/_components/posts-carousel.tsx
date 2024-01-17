@@ -28,12 +28,12 @@ const PostsCarousel = ({ data }: PostsCarouselProps) => {
           <CarouselItem className="relative" key={post._id}>
             <Link href={`/projects/${post.slug}`}>
               <Image
-                unoptimized
                 src={post.image}
                 alt={post.name}
                 priority
-                height={500}
                 width={500}
+                height={500}
+                unoptimized
                 className="h-56 lg:h-60 w-full object-cover"
               />
               <div className="absolute top-1/2 left-10">
