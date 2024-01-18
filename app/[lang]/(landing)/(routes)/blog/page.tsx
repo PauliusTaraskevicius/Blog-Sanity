@@ -1,9 +1,11 @@
 import { getBlogs } from "@/sanity/sanity-utils";
 import { getSearchData } from "@/sanity/sanity-utils";
 
-import BlogList from "./_components/blog-list";
-import HomeBanner from "../../_components/home-banner";
-import SearchResults from "../../_components/search-results";
+import dynamic from "next/dynamic";
+
+const SearchResults = dynamic(() => import("../../_components/search-results"));
+const HomeBanner = dynamic(() => import("../../_components/home-banner"));
+const BlogList = dynamic(() => import("./_components/blog-list"));
 
 interface SearchProps {
   searchParams: {

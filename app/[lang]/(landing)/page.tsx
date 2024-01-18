@@ -5,17 +5,11 @@ import {
   getTips,
 } from "@/sanity/sanity-utils";
 
-// import BlogList from "./(routes)/blog/_components/blog-list";
-// import HomeBanner from "./_components/home-banner";
-// import Collage from "./_components/collage";
-// import SearchResults from "./_components/search-results";
-// import PostsCarousel from "./_components/posts-carousel";
 import dynamic from "next/dynamic";
 
 const BlogList = dynamic(() => import("./(routes)/blog/_components/blog-list")) 
 const HomeBanner = dynamic(() => import("./_components/home-banner")) 
 const Collage = dynamic(() => import("./_components/collage")) 
-
 const SearchResults = dynamic(() => import("./_components/search-results")) 
 const PostsCarousel = dynamic(() => import("./_components/posts-carousel")) 
 

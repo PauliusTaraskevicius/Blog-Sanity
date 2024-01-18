@@ -2,10 +2,12 @@ import Image from "next/image";
 
 import { getSearchData } from "@/sanity/sanity-utils";
 
-import SearchResults from "../../_components/search-results";
-import SocialIcons from "./_components/social-icons";
-
 import profileImg from "@/public/images/profile.png";
+
+import dynamic from "next/dynamic";
+
+const SearchResults = dynamic(() => import("../../_components/search-results"));
+const SocialIcons = dynamic(() => import("./_components/social-icons"));
 
 interface SearchProps {
   searchParams: {
