@@ -31,9 +31,11 @@ const AboutPage = async ({ searchParams }: SearchProps) => {
               <Image
                 src={profileImg}
                 alt="profile"
-                width={650}
-                height={650}
                 priority
+                quality={100}
+                width={700}
+                height={475}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 700px"
               />
             </div>
 

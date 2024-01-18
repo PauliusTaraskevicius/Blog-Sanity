@@ -24,7 +24,8 @@ const PostsBanner = ({
       <div>
         <Image
           fill
-          className="bg-auto md:bg-contain bg-no-repeat bg-center"
+          className="object-cover"
+          // className="bg-auto md:bg-contain bg-no-repeat bg-center"
           src={bannerImg || ""}
           alt={header}
           priority
