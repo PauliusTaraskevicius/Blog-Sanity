@@ -1,9 +1,11 @@
 import { getTip } from "@/sanity/sanity-utils";
 import { getSearchData } from "@/sanity/sanity-utils";
 
-import TipDetails from "../_components/tip-details";
-import RecentBlogs from "../../blog/_components/recent-blogs";
-import SearchResults from "../../../_components/search-results";
+import dynamic from "next/dynamic";
+
+const SearchResults = dynamic(() => import("../../../_components/search-results")) 
+const RecentBlogs = dynamic(() => import("../../blog/_components/recent-blogs")) 
+const TipDetails = dynamic(() => import("../_components/tip-details")) 
 
 interface TipSlugProps {
   params: { tip: string };

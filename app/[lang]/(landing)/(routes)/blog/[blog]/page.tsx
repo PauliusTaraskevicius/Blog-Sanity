@@ -1,9 +1,11 @@
 import { getBlog } from "@/sanity/sanity-utils";
 import { getSearchData } from "@/sanity/sanity-utils";
 
-import BlogDetails from "../_components/blog-details";
-import RecentBlogs from "../_components/recent-blogs";
-import SearchResults from "../../../_components/search-results";
+import dynamic from "next/dynamic";
+
+const SearchResults = dynamic(() => import("../../../_components/search-results")) 
+const RecentBlogs = dynamic(() => import("../_components/recent-blogs")) 
+const BlogDetails = dynamic(() => import("../_components/blog-details")) 
 
 interface BlogSlugProps {
   params: { blog: string };

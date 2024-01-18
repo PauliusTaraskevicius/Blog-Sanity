@@ -9,7 +9,7 @@ import dynamic from "next/dynamic";
 
 const BlogList = dynamic(() => import("./(routes)/blog/_components/blog-list")) 
 const HomeBanner = dynamic(() => import("./_components/home-banner")) 
-const Collage = dynamic(() => import("./_components/collage")) 
+const Collage = dynamic(() => import("./_components/collage"))
 const SearchResults = dynamic(() => import("./_components/search-results")) 
 const PostsCarousel = dynamic(() => import("./_components/posts-carousel")) 
 

@@ -1,11 +1,12 @@
-import { getBlog, getProject } from "@/sanity/sanity-utils";
+import { getProject } from "@/sanity/sanity-utils";
 import { getSearchData } from "@/sanity/sanity-utils";
 
+import dynamic from "next/dynamic";
 
+const SearchResults = dynamic(() => import("../../../_components/search-results")) 
+const RecentProjects = dynamic(() => import("../_components/recent-projects")) 
+const ProjectDetails = dynamic(() => import("../_components/project-details")) 
 
-import SearchResults from "../../../_components/search-results";
-import ProjectDetails from "../_components/project-details";
-import RecentProjects from "../_components/recent-projects";
 
 interface ProjectSlugProps {
   params: { project: string };
