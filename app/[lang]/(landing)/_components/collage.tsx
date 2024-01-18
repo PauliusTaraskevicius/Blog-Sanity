@@ -20,8 +20,7 @@ const Collage = ({ tips }: CollageProps) => {
             <div className="cursor-pointer group-hover:brightness-90 transition">
               <Image
                 priority
-                // quality={100}
-                unoptimized
+                quality={100}
                 width={700}
                 height={475}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 700px"
