@@ -1,9 +1,9 @@
 //robots.txt
 
-# Block all crawlers for /accounts
+# Block all crawlers for /admin
 User-agent: *
-Disallow: /accounts
+Disallow: /admin
 
 # Allow all crawlers
 User-agent: *
-Allow: /
+Allow: *
