@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  // experimental: { optimizeCss: true },
   images: {
     minimumCacheTTL: 60,
     formats: ['image/avif', 'image/webp'],

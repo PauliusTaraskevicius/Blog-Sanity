@@ -28,7 +28,7 @@ const CookiesConsent = () => {
           We use cookies to enchance your brownsing experience, serve
           personalized ads or content, and analyze our traffic.
         </p>
-        <Button size="lg" onClick={() => acceptCookie()}>
+        <Button aria-label="accept" size="lg" onClick={() => acceptCookie()}>
           Accept
         </Button>
       </div>

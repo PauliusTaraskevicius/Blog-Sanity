@@ -28,7 +28,7 @@ const DropdownContact = ({ name, customClass }: DropdownContactProps) => {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <div className=" group flex justify-center items-center space-x-1">
-          <Button variant="outline" className={customClass}>
+          <Button variant="outline" className={customClass} aria-label="contact">
             {name}
           </Button>
           <Play className="w-3 h-3 rotate-90 transition duration-200 group-data-[state=open]:-rotate-90 fill-black dark:fill-white" />

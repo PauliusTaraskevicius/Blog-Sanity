@@ -26,7 +26,7 @@ const Collage = ({ tips }: CollageProps) => {
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 700px"
                 className="h-56 lg:h-96 2xl:h-[34rem] w-screen  object-cover 2xl:object-fill"
                 src={tips[tips.length - 1].image}
-                alt={tips[tips.length - 1].name}
+                alt={tips[tips.length - 1].description}
               />
               <div className="lg:hidden pt-[20px] pb-[20px] bg-white dark:bg-transparent">
                 <h2 className="text-2xl font-normal leading-normal pb-3 overflow-hidden cursor-pointer group-hover:underline pt-[18px]">

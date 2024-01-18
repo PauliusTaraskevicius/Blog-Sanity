@@ -26,7 +26,7 @@ const TipsList = ({ tips }: TipsListProps) => {
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 700px"
                   className="h-56 lg:h-60 w-full object-cover bg-[#e8e8e8] "
                   src={tip.image}
-                  alt={tip.name}
+                  alt={tip.description}
                 />
               </div>
               <div className="pt-[20px] pb-[20px] bg-white dark:bg-transparent">

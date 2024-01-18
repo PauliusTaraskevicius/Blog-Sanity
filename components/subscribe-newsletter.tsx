@@ -48,7 +48,7 @@ const SubscribeNewsLetter = () => {
           {loading ? (
             <Loader className="w-6 h-6 animate-spin text-black dark:text-white" />
           ) : (
-            <Button disabled={loading} type="submit" onClick={subscribe} className="">
+            <Button aria-label="subscribe" disabled={loading} type="submit" onClick={subscribe} className="">
               Subscribe
             </Button>
           )}
