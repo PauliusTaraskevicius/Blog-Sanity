@@ -30,10 +30,11 @@ const PostsCarousel = ({ data }: PostsCarouselProps) => {
               <Image
                 src={post.image}
                 alt={post.name}
-                priority
-                width={500}
-                height={500}
-                unoptimized
+                loading="lazy"
+                quality={100}
+                width={700}
+                height={475}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 700px"
                 className="h-56 lg:h-60 w-full object-cover"
               />
               <div className="absolute top-1/2 left-10">

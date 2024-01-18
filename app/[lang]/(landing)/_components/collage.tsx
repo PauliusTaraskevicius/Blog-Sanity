@@ -10,8 +10,8 @@ interface CollageProps {
 
 const Collage = ({ tips }: CollageProps) => {
   return (
-    <div className="h-full w-full pt-[58px]">
-      <div className="relative w-full lg:h-1/2 flex justify-center items-center ">
+    <div className="h-full w-full">
+      <div className="relative w-full lg:h-1/2 flex justify-center items-center">
         <div
           key={tips[0]._id}
           className="rounded-lg max-w-xs md:max-w-none group"
@@ -20,10 +20,11 @@ const Collage = ({ tips }: CollageProps) => {
             <div className="cursor-pointer group-hover:brightness-90 transition">
               <Image
                 priority
-                unoptimized
-                height={500}
-                width={500}
-                className="h-56 lg:h-1/2 w-screen object-cover"
+                quality={100}
+                width={700}
+                height={475}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 700px"
+                className="h-56 lg:h-96 2xl:h-[44rem] w-screen object-cover 2xl:object-fill"
                 src={tips[tips.length - 1].image}
                 alt={tips[tips.length - 1].name}
               />
@@ -59,8 +60,11 @@ const Collage = ({ tips }: CollageProps) => {
               <Link href={`/tips/${tips[tips.length - 2].slug}`}>
                 <div className="cursor-pointer group-hover:brightness-90 transition">
                   <Image
-                    height={500}
-                    width={500}
+                    loading="lazy"
+                    quality={100}
+                    width={700}
+                    height={475}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 700px"
                     className="h-56 lg:h-3/4 w-full object-cover bg-[#e8e8e8] "
                     src={tips[tips.length - 2].image}
                     alt={tips[tips.length - 2].name}
@@ -87,8 +91,11 @@ const Collage = ({ tips }: CollageProps) => {
             <Link href={`/tips/${tips[tips.length - 3].slug}`}>
               <div className="cursor-pointer group-hover:brightness-90 transition">
                 <Image
-                  height={500}
-                  width={500}
+                  loading="lazy"
+                  quality={100}
+                  width={700}
+                  height={475}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 700px"
                   className="h-56 lg:h-full w-full object-cover"
                   src={tips[tips.length - 3].image}
                   alt={tips[tips.length - 3].name}

@@ -7,7 +7,7 @@ import Date from "@/components/date";
 interface TipsListProps {
   tips: Tip[];
 }
- 
+
 const TipsList = ({ tips }: TipsListProps) => {
   return (
     <div className="relative h-full w-full opacity-[1px] pt-[58px]">
@@ -20,8 +20,10 @@ const TipsList = ({ tips }: TipsListProps) => {
             <Link href={`/tips/${tip.slug}`}>
               <div className="cursor-pointer group-hover:brightness-90 transition">
                 <Image
-                  height={500}
-                  width={500}
+                  quality={100}
+                  width={700}
+                  height={475}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 700px"
                   className="h-56 lg:h-60 w-full object-cover bg-[#e8e8e8] "
                   src={tip.image}
                   alt={tip.name}

@@ -21,8 +21,10 @@ const ProjectsList = ({ projects }: ProjectsListProps) => {
             <Link href={`/projects/${project.slug}`}>
               <div className="cursor-pointer group-hover:brightness-90 transition">
                 <Image
-                  height={500}
-                  width={500}
+                  quality={100}
+                  width={700}
+                  height={475}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 700px"
                   className="h-56 lg:h-60 w-full object-cover bg-[#e8e8e8] "
                   src={project.image}
                   alt={project.name}

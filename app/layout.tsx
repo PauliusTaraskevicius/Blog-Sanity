@@ -5,9 +5,9 @@ import { ThemeProvider } from "@/components/providers/theme-provider";
 import ToastProvider from "@/components/providers/toaster-provider";
 
 const noto_sans = Noto_Sans({
-  weight: '400',
-  subsets: ['latin'],
-})
+  weight: "400",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "PaulyDev",
@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="lt" suppressHydrationWarning>
+    <html rel="stylesheet" lang="lt" suppressHydrationWarning>
       <ToastProvider />
 
       <body className={noto_sans.className}>

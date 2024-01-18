@@ -1,5 +1,5 @@
 import "server-only";
-import type { Locale } from "@/i18n.config";
+import { Locale } from "@/i18n.config";
 
 const dictionaries = {
   en: () => import("@/dictionaries/en.json").then((module) => module.default),
@@ -7,4 +7,6 @@ const dictionaries = {
   ru: () => import("@/dictionaries/ru.json").then((module) => module.default),
 };
 
-export const getDictionary = async (locale: Locale) => dictionaries[locale]();
+export const getDictionary = async (locale: Locale) => {
+  return locale == "lt" ? dictionaries.lt() : dictionaries.en();
+};

@@ -30,7 +30,6 @@ const AboutPage = async ({ searchParams }: SearchProps) => {
             <div className="bg-gradient-to-r from-white via-neutral-300 to-neutral-400 flex justify-end h-auto w-4/5 md:w-3/5">
               <Image
                 src={profileImg}
-                unoptimized
                 alt="profile"
                 width={650}
                 height={650}
