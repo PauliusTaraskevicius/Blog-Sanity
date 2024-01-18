@@ -31,7 +31,8 @@ const PostsCarousel = ({ data }: PostsCarouselProps) => {
                 src={post.image}
                 alt={post.name}
                 loading="lazy"
-                quality={100}
+                // quality={100}
+                unoptimized
                 width={700}
                 height={475}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 700px"

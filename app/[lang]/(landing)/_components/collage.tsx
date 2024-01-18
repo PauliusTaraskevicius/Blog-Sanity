@@ -11,7 +11,7 @@ interface CollageProps {
 const Collage = ({ tips }: CollageProps) => {
   return (
     <div className="h-full w-full">
-      <div className="relative w-full lg:h-1/2 flex justify-center items-center">
+      <div className="relative w-full lg:h-1/2 flex justify-center items-center bg-red-300">
         <div
           key={tips[0]._id}
           className="rounded-lg max-w-xs md:max-w-none group"
@@ -20,11 +20,12 @@ const Collage = ({ tips }: CollageProps) => {
             <div className="cursor-pointer group-hover:brightness-90 transition">
               <Image
                 priority
-                quality={100}
+                // quality={100}
+                unoptimized
                 width={700}
                 height={475}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 700px"
-                className="h-56 lg:h-96 2xl:h-[44rem] w-screen object-cover 2xl:object-fill"
+                className="h-56 lg:h-96 2xl:h-[34rem] w-screen object-cover 2xl:object-fill"
                 src={tips[tips.length - 1].image}
                 alt={tips[tips.length - 1].name}
               />
