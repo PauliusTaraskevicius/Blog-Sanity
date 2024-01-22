@@ -11,23 +11,23 @@ const NavbarRoutes = ({ lang }: { lang: Locale }) => {
 
   const routes = [
     {
-      href: `/${lang}/blog`,
+      href: `/blog`,
       label: lang === "lt" ? "Blogas" : lang === "ru" ? "Блог" : "Blog",
       active: pathname === `/${lang}/blog`,
     },
     {
-      href: `/${lang}/tips`,
+      href: `/tips`,
       label: lang === "lt" ? "Patarimai" : lang === "ru" ? "Cоветы" : "Tips",
       active: pathname === `/${lang}/tips`,
     },
     {
-      href: `/${lang}/projects`,
+      href: `/projects`,
       label:
         lang === "lt" ? "Projektai" : lang === "ru" ? "Проекты" : "Projects",
       active: pathname === `/${lang}/projects`,
     },
     {
-      href: `/${lang}/about`,
+      href: `/about`,
       label: lang === "lt" ? "Apie mus" : lang === "ru" ? "О нас" : "About us",
       active: pathname === `/${lang}/about`,
     },
@@ -36,7 +36,14 @@ const NavbarRoutes = ({ lang }: { lang: Locale }) => {
       // label:
       //   lang === "lt" ? "Kontaktai" : lang === "ru" ? "Kонтакт" : "Contacts",
       // active: pathname === `/${lang}/contact`,
-      component: <DropdownContact name={lang === "lt" ? "Kontaktai" : lang === "ru" ? "Kонтакт" : "Contacts"} customClass="flex md:justify-center items-center text-[16px] py-4 md:text-base font-semibold whitespace-nowrap border-none bg-transparent px-0 hover:bg-transparent hover:dark:text-white"/>
+      component: (
+        <DropdownContact
+          name={
+            lang === "lt" ? "Kontaktai" : lang === "ru" ? "Kонтакт" : "Contacts"
+          }
+          customClass="flex md:justify-center items-center text-[16px] py-4 md:text-base font-semibold whitespace-nowrap border-none bg-transparent px-0 hover:bg-transparent hover:dark:text-white"
+        />
+      ),
     },
   ];
 

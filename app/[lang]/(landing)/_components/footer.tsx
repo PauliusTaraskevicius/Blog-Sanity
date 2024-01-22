@@ -34,28 +34,28 @@ async function Footer({ lang }: { lang: Locale }) {
             </DropdownMenuTrigger>
             <DropdownMenuContent className="text-muted-foreground text-center px-0 py-0">
               <DropdownMenuItem>
-                <Link href={`/${lang}/blog`} className="w-full">
+                <Link href={`/blog`} className="w-full">
                   <p className="hover:bg-blue-600 hover:text-white transition cursor-pointer leading-loose">
                     {footer.blog}
                   </p>
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuItem>
-                <Link href={`/${lang}/tips`} className="w-full">
+                <Link href={`/tips`} className="w-full">
                   <p className="hover:bg-blue-600 hover:text-white transition cursor-pointer leading-loose">
                     {footer.tips}
                   </p>
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuItem>
-                <Link href={`/${lang}/projects`} className="w-full">
+                <Link href={`/projects`} className="w-full">
                   <p className="hover:bg-blue-600 hover:text-white transition cursor-pointer leading-loose">
                     {footer.projects}
                   </p>
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuItem>
-                <Link href={`/${lang}/about`} className="w-full">
+                <Link href={`/about`} className="w-full">
                   <p className="hover:bg-blue-600 hover:text-white transition cursor-pointer leading-loose">
                     {footer.about}
                   </p>

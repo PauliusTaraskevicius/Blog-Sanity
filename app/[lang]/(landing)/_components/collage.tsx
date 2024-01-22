@@ -24,7 +24,7 @@ const Collage = ({ tips }: CollageProps) => {
                 width={700}
                 height={475}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 700px"
-                className="h-56 lg:h-96 2xl:h-[34rem] w-screen  object-cover 2xl:object-fill"
+                className="h-56 lg:h-96 2xl:h-[40rem] w-screen object-cover 2xl:object-fill"
                 src={tips[tips.length - 1].image}
                 alt={tips[tips.length - 1].description}
               />
@@ -38,6 +38,7 @@ const Collage = ({ tips }: CollageProps) => {
               </div>
 
               <div className="hidden lg:block absolute bottom-5 left-5 bg-white dark:bg-transparent w-1/2 p-10">
+                <p className="uppercase">{tips[tips.length - 1].type}</p>
                 <h2 className="text-2xl font-normal leading-normal pb-3 overflow-hidden cursor-pointer group-hover:underline pt-[18px]">
                   {tips[tips.length - 1].name}
                 </h2>
@@ -71,6 +72,7 @@ const Collage = ({ tips }: CollageProps) => {
                   />
                 </div>
                 <div className="pt-[20px] pb-[20px] bg-white dark:bg-transparent">
+                  <p className="uppercase">{tips[tips.length - 2].type}</p>
                   <h2 className="text-2xl font-normal leading-normal pb-3 overflow-hidden cursor-pointer group-hover:underline pt-[18px]">
                     {tips[tips.length - 2].name}
                   </h2>
@@ -110,6 +112,7 @@ const Collage = ({ tips }: CollageProps) => {
                 </p>
               </div>
               <div className="hidden lg:block absolute bottom-10 left-5 bg-white dark:bg-transparent w-1/2 p-10">
+                <p className="uppercase">{tips[tips.length - 3].type}</p>
                 <h2 className="text-2xl font-normal leading-normal pb-3 overflow-hidden cursor-pointer group-hover:underline pt-[18px]">
                   {tips[tips.length - 3].name}
                 </h2>

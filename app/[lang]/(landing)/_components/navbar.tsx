@@ -37,7 +37,7 @@ const Navbar = ({ lang }: { lang: Locale }) => {
         <div className="h-[55px] left-0 flex items-center">
           <div className="h-full flex items-center text-center justify-center gap-x-4">
             <Link
-              href={`/${lang}/`}
+              href={`/`}
               className="flex items-center justify-center space-x-2 pb-1"
             >
               <Code2 className="w-4 h-4 2xl:w-6 2xl:h-6 dark:text-white" />

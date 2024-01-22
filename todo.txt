@@ -1,2 +1,3 @@
 -load posts on scroll
 -paziuret del svetaines greicio
+-sitemap.xml paziuret arba istrinti kalbas

@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "sitemap": "next-sitemap --config next-sitemap.config.js"
   },
   "dependencies": {
     "@formatjs/intl-localematcher": "^0.5.2",
@@ -35,6 +36,7 @@
     "react-dom": "^18",
     "react-hot-toast": "^2.4.1",
     "sanity": "^3.19.1",
+    "sharp": "^0.33.2",
     "tailwind-merge": "^2.0.0",
     "tailwindcss-animate": "^1.0.7",
     "vaul": "^0.8.0",

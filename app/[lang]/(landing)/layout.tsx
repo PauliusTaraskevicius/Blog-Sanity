@@ -1,14 +1,11 @@
 import { Locale, i18n } from "@/i18n.config";
 
 import Footer from "./_components/footer";
-// import Navbar from "./_components/navbar";
-// import ModalProvider from "@/components/modal-provider";
-// import CookiesConsent from "@/components/cookies-consent";
 import dynamic from "next/dynamic";
 
-const Navbar = dynamic(() => import("./_components/navbar")) 
-const ModalProvider = dynamic(() => import("@/components/modal-provider")) 
-const CookiesConsent = dynamic(() => import("@/components/cookies-consent")) 
+const Navbar = dynamic(() => import("./_components/navbar"));
+const ModalProvider = dynamic(() => import("@/components/modal-provider"));
+const CookiesConsent = dynamic(() => import("@/components/cookies-consent"));
 
 export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));
