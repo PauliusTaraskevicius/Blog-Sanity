@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 
-import { Locale } from "@/i18n.config";
 import { Menu } from "lucide-react";
 import { Code2 } from "lucide-react";
 
@@ -20,7 +19,7 @@ import SearchInput from "./search-input";
 import SubscribeNewsLetter from "@/components/subscribe-newsletter";
 import CookiesModal from "@/components/cookies-modal";
 
-const MobileNavbar = ({ lang }: { lang: Locale }) => {
+const MobileNavbar = () => {
   const scrolled = useScrollTop();
 
   return (
@@ -47,7 +46,7 @@ const MobileNavbar = ({ lang }: { lang: Locale }) => {
               </div>
             </div>
             <div className="pt-10">
-              <NavbarRoutes lang={lang} />
+              <NavbarRoutes />
             </div>
             <div className="pb-4">
               <SubscribeNewsLetter />
@@ -55,24 +54,10 @@ const MobileNavbar = ({ lang }: { lang: Locale }) => {
 
             <ul className="text-[11px] px-2 font-semibold">
               <li className="py-2">
-                <CookiesModal
-                  trigger={
-                    lang === "lt"
-                      ? "Slapukai"
-                      : lang === "ru"
-                      ? "Pеченье"
-                      : "Cookies"
-                  }
-                />
+                <CookiesModal trigger="Cookies" />
               </li>
               <li className="py-2">
-                <Link href={`/${lang}/about`}>
-                  {lang === "lt"
-                    ? "Apie mus"
-                    : lang === "ru"
-                    ? "О нас"
-                    : "About"}
-                </Link>
+                <Link href={`/about`}>About</Link>
               </li>
             </ul>
           </div>

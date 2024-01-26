@@ -16,7 +16,6 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 
-import { Locale } from "@/i18n.config";
 import MobileNavbar from "./mobile-navbar";
 import { useScrollTop } from "@/hooks/use-scroll-top";
 import { useModal } from "@/hooks/use-modal";
@@ -27,7 +26,7 @@ const Navbar = ({ lang }: { lang: Locale }) => {
 
   return (
     <>
-      <MobileNavbar lang={lang} />
+      <MobileNavbar />
       <nav
         className={cn(
           "hidden lg:flex md:w-full fixed top-0 justify-between items-center z-50 border-b dark:border-white px-4 bg-white dark:bg-transparent text-black dark:text-white",
@@ -46,7 +45,7 @@ const Navbar = ({ lang }: { lang: Locale }) => {
               </div>
             </Link>
 
-            <NavbarRoutes lang={lang} />
+            <NavbarRoutes />
           </div>
         </div>
         <div className="px-4">
@@ -65,13 +64,7 @@ const Navbar = ({ lang }: { lang: Locale }) => {
                 </div>
               </TooltipTrigger>
               <TooltipContent className="text-xs">
-                <p>
-                  {lang === "lt"
-                    ? "Prenumeruoti"
-                    : lang === "ru"
-                    ? "Подписаться"
-                    : "Subscribe"}
-                </p>
+                <p>Subscribe</p>
               </TooltipContent>
             </Tooltip>
           </TooltipProvider>

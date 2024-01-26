@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Github } from "lucide-react";
 import { Linkedin } from "lucide-react";
 import { Facebook } from "lucide-react";
-import { FileCheck2 } from 'lucide-react';
+import { FileCheck2 } from "lucide-react";
 
 import {
   DropdownMenu,
@@ -28,7 +28,11 @@ const DropdownContact = ({ name, customClass }: DropdownContactProps) => {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <div className=" group flex justify-center items-center space-x-1">
-          <Button variant="outline" className={customClass} aria-label="contact">
+          <Button
+            variant="outline"
+            className={customClass}
+            aria-label="contact"
+          >
             {name}
           </Button>
           <Play className="w-3 h-3 rotate-90 transition duration-200 group-data-[state=open]:-rotate-90 fill-black dark:fill-white" />
@@ -81,7 +85,7 @@ const DropdownContact = ({ name, customClass }: DropdownContactProps) => {
             {" "}
             <Link
               className="flex justify-center items-center py-1"
-              href="https://drive.google.com/file/d/1rvRD-Np22RSuGR85vcPdU0P0WAM5hjLz/view?usp=sharing"
+              href="https://drive.google.com/file/d/1y4vXFev88g2P2Ij2tYsXKbtb2l_kZzI1/view?usp=sharing"
             >
               <div className="flex justify-center items-center space-x-1">
                 {" "}

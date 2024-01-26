@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html rel="stylesheet" lang="lt" suppressHydrationWarning>
+    <html rel="stylesheet" suppressHydrationWarning>
       <ToastProvider />
 
       <body className={noto_sans.className}>

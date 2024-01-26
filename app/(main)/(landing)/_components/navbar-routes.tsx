@@ -3,44 +3,38 @@
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
-import { Locale } from "@/i18n.config";
+
 import DropdownContact from "@/components/dropdown-contact";
 
-const NavbarRoutes = ({ lang }: { lang: Locale }) => {
+const NavbarRoutes = () => {
   const pathname = usePathname();
 
   const routes = [
     {
       href: `/blog`,
-      label: lang === "lt" ? "Blogas" : lang === "ru" ? "Блог" : "Blog",
-      active: pathname === `/${lang}/blog`,
+      label: "Blog",
+      active: pathname === `/blog`,
     },
     {
       href: `/tips`,
-      label: lang === "lt" ? "Patarimai" : lang === "ru" ? "Cоветы" : "Tips",
-      active: pathname === `/${lang}/tips`,
+      label: "Tips",
+      active: pathname === `/tips`,
     },
     {
       href: `/projects`,
-      label:
-        lang === "lt" ? "Projektai" : lang === "ru" ? "Проекты" : "Projects",
-      active: pathname === `/${lang}/projects`,
+      label: "Projects",
+      active: pathname === `/projects`,
     },
     {
       href: `/about`,
-      label: lang === "lt" ? "Apie mus" : lang === "ru" ? "О нас" : "About us",
-      active: pathname === `/${lang}/about`,
+      label: "About us",
+      active: pathname === `/about`,
     },
     {
       href: `#`,
-      // label:
-      //   lang === "lt" ? "Kontaktai" : lang === "ru" ? "Kонтакт" : "Contacts",
-      // active: pathname === `/${lang}/contact`,
       component: (
         <DropdownContact
-          name={
-            lang === "lt" ? "Kontaktai" : lang === "ru" ? "Kонтакт" : "Contacts"
-          }
+          name='Contacts'
           customClass="flex md:justify-center items-center text-[16px] py-4 md:text-base font-semibold whitespace-nowrap border-none bg-transparent px-0 hover:bg-transparent hover:dark:text-white"
         />
       ),

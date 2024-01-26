@@ -1,3 +1,5 @@
 -load posts on scroll
 -paziuret del svetaines greicio
 -sitemap.xml paziuret arba istrinti kalbas
+-Add skeleton
+-Codewith Antonio del mobile nav uzdarymo
