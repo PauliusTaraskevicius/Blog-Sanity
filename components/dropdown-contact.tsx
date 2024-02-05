@@ -85,7 +85,7 @@ const DropdownContact = ({ name, customClass }: DropdownContactProps) => {
             {" "}
             <Link
               className="flex justify-center items-center py-1"
-              href="https://drive.google.com/file/d/1y4vXFev88g2P2Ij2tYsXKbtb2l_kZzI1/view?usp=sharing"
+              href="https://drive.google.com/file/d/1gxxctkQCZ6UFqV5snfKa8YCy2JHMY9hp/view?usp=sharing"
             >
               <div className="flex justify-center items-center space-x-1">
                 {" "}
